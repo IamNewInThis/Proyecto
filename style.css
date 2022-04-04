@@ -295,8 +295,6 @@ section{
 /*-----------------------------------------SLIDER-------------------------------*/
 
 
-
-
 .home-slider{
     min-height: 100vh;
     display: flex;
@@ -355,58 +353,106 @@ section{
 .home-slider .controles .vid-btn.active{
     background: var(--green);
 }
-/*
-.slider{
+
+
+
+/*-----------------------------------------CONTACTO-------------------------------*/
+.contacto .row{
     display: flex;
-    align-items: center;
-    min-height: 100vh;
-    background:url(images/slider1.jpg);
-    background:url(images/slider2.jpg);
-    background:url(images/slider3.jpg);
-    background-size: cover;
-    background-position: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
 }
 
-*/
-/*section{
-    padding: 10rem 12%;
+/*NOMBRE-EMAIL-NUMERO*/
+.contacto .row form{
+    flex: 1 1 40rem;
+    padding: 2rem 2.5rem;
+    box-shadow: 0.5rem 1.5rem rgba(0, 0, 0, .1); /*sombra*/
+    border: .1rem solid rgba(0, 0, 0, .1);
+    background: var(--white);
+    border-radius: .5rem;
 }
 
-.slider{
-    padding-top:75px;
+.contacto .row .image{
+    flex: 1 1 40rem;
 }
 
-.slider .home-slider{
-    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
-    border: .1rem solid rgba(0, 0, 0, .3);
-    border-top: 0;
+.contacto .row .image img{
+    width: 100%;
 }
 
-.slider .home-slider .box{
-    background-size: cover !important;
-    background-position: center !important;
-    min-height: 55rem;
-    position: relative;
+.contacto .row form .box{
+    padding: 1rem;
+    font-size: 1.7rem;/*tamaño letra*/
+    color: var(--black); /*color letra*/
+    text-transform: none;
+    border: .1rem solid rgba(0, 0, 0, .1);
+    border-radius: .5rem;
+    margin: .7rem 0;
+    width: 100%;
 }
 
-.slider .home-slider.box .contenido{
-    position: absolute;
-    top: 50%;
-    left: 5%;
-    transform: translateY(-50%);
-    max-width: 50rem;
+.contacto .row form textarea{
+    height: 15rem;
+    resize: none;
 }
 
-.slider .home-slider .box .contenido span{
-    font-size: 3rem;
+/*-----------------------------------------FOOTER-------------------------------*/
+.footer .row form textarea{
+    height: 15rem;
+    resize: none;
+}
+
+.footer .box-container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+
+.footer .box-container .box{
+    flex:1 1 25rem ;
+}
+
+.footer .box-container .box h3{
     color: var(--black);
+    flex: rem ;
+    padding: 2rem 0;
 }
 
-.slider .home-slider .box .contenido h3{
-    font-size: 6rem;
+.footer .box-container .box a{
+    display: block;
+    color: var(--grey);
+    font-size:1.5rem ;
+    padding: 1rem 0;
+}
+
+.footer .box-container .box p{
+    display: block;
+    color: var(--grey);
+    font-size:1.5rem ;
+    padding: 1rem 0;
+}
+
+.footer .box-container .box a:hover{
+    color: var(--pink);
+    text-decoration: underline;/*linea en los links*/
+}
+
+.footer .box-container .box img{
+    margin-top: 1rem;
+}
+
+.footer .derechos{
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 1.5rem;
+    padding-top: 2.5rem;
+    font-size: 1.5rem;
     color: var(--black);
-    padding: .5rem 0;
-}*/
+    border-top: .1rem solid rgba(0, 0, 0, .1);
+}
+
 
 
 /*ADAPTAR PANTALLA*/
