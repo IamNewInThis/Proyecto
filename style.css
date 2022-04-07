@@ -34,7 +34,7 @@ header{
     left: 0;
     right: 0;
     background: #ffc0cb; /*COLOR DEL HEADER*/
-    padding: 2rem 9%;
+    padding: 0.5rem 9%;
     display: flex;
     align-items: center;
     justify-content: space-between;/*SEPARAR LOS ITEMS*/
@@ -44,9 +44,10 @@ header{
 
 /*LOGO BARRA SUPERIOR*/
 header .logo{
-    font-size: 3rem;
-    color:var(--black);
+    font-size: 3rem !important;
+    color:var(--black) !important;
     font-weight: bolder;
+    text-decoration: none;
 }
 
 /*ROSADO EN EL SECRETS*/
@@ -71,6 +72,8 @@ header .icono a{
     font-size: 2.5rem;
     color: var(--black);
     margin-left: 1.5rem;
+    text-decoration: none;
+    padding: 0;
 }
 /*CUANDO SE PASA EL CURSOR POR ENCIMA DE LOS ICONOS CAMBIA DE COLOR**/
 header .icono a:hover{
@@ -111,8 +114,9 @@ section{
 }
 
 .home .contenido h3{
-    font-size: 6rem;
-    color: var(--black);
+    font-size: 6rem !important;
+    color: var(--black) !important;
+    font-weight: 600;
 }
 
 
@@ -483,15 +487,6 @@ section{
         display: block;
     }
 
-    header .navbar{
-        position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
-        background: #eee;
-        border-top: .1rem solid rgba(0, 0, 0, .1);
-        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
-    }
 
     header #toggler:checked ~.navbar{
         clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
@@ -501,7 +496,6 @@ section{
     header .navbar a{
         margin: 1.5rem;
         padding: 1.5rem;
-        background: #fff;
         border: .1rem solid rgba(0, 0, 0, .1);
         display: block;
     }
@@ -529,3 +523,9 @@ section{
         font-size: 50%;
     }
 }
+
+.colornvar {
+    background: #ffc0cb !important;
+    width:100%;
+}
+
