@@ -498,6 +498,7 @@ section{
         padding: 1.5rem;
         border: .1rem solid rgba(0, 0, 0, .1);
         display: block;
+        margin-left: 5px;
     }
 
     .home .contenido h3{
@@ -514,8 +515,11 @@ section{
     .icono-container .iconos span{
         font-size: 1.7rem;
     }
-
+    .navbar-nav .nav-link{
+        padding-left: 15px !important;
+    }
 }
+
 
 
 @media (max-width:450px){
