@@ -457,7 +457,9 @@ section{
     border-top: .1rem solid rgba(0, 0, 0, .1);
 }
 
-
+.footer {
+    background: #fff;
+}
 
 /*ADAPTAR PANTALLA*/
 @media (max-width:991px){
