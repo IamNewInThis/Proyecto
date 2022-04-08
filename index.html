@@ -14,34 +14,49 @@
 
     <!--FONT AWESOME -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+
+    <!-- BOOTSTRAP -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 </head>
 <body>
+    <!-- BARRA CON MENÚ -->
     <header>
-
-        <input type="checkbox" name=" " id="toggler">
-        <label for="toggler" class="fas fa-bars"></label>
-
-        <!--TITULO DE LA PAGINA-->
-        <a href="#" class="logo">Flower <span>Secrets</span></a>
-
-        <!--SECCIONES DE LA BARRA SUPERIOR-->
-        <nav class="navbar">
-            <a href="index.html">Inicio</a>
-            <a href="#flores">Flores</a>
-            <a href="maceteros.html">Maceteros</a>
-            <a href="tierra.html">tierra de hojas</a>
-            <a href="arbustos.html">Arbustos</a>
-            <a href="#contacto">contacto</a>
-        </nav>
-
-        <!--ICONOS DE CORAZON,CARRITO Y USER-->
-        <div class="icono">
-            <a href="#" class="fas fa fa-heart"></a>
-            <a href="#" class="fas fa fa-shopping-cart"></a>
-            <a href="#" class="fas fa fa-user"></a>  
-            <a href="#" class="fas fa fa-search"></a>   
-        </div>
-
+        <nav class="navbar navbar-expand-lg navbar-light colornvar">
+            <div class="container-fluid">
+              <a class="logo" href="#">Flower <span>Secrets</span></a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse justify-content-around" id="navbarNav">
+                <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link"  href="index.html">Inicio</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="flores.html">Flores</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="maceteros.html">Macetero</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="tierra.html">Tierra de hojas</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="arbustos.html">Arbustos</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Subscripción</a>
+                  </li>
+                </ul>
+                <div class="icono">
+                    <a href="#" class="fas fa fa-heart"></a>
+                    <a href="#" class="fas fa fa-shopping-cart"></a>
+                    <a href="#" class="fas fa fa-user"></a>  
+                    <a href="#" class="fas fa fa-search"></a>   
+                </div>
+              </div>
+            </div>
+          </nav>
     </header>
 
 
@@ -50,13 +65,16 @@
         <div class="contenido">
             <h3>Flores</h3>
             <h3>Maceteros</h3>
+            <h3>Arbustos</h3>
             <h3>Tierra De Hojas</h3>
             
-            <span>Naturales y Hermosas Flores</span>
-            <p>jasjdaksda jaksdjaksdjaskdjadjkaskdjasdajkdsakjdsajsdkjad
-                aksjdaskdjaskdjasdaskdjasdkj
+            <span>Tener el jardin o casa mas hermoso</span>
+            <span>Encuentra todo aquí para tenerlo</span>
+            <p>
+                los mejores maceteros flores arbustos y tierra para cuidar tus plantas <br>
+                todos nuestros productos con excelente calidad
             </p>
-            <a href="#" class="btn">Compra ahora</a>
+            <a class="btn btn-outline-success" href="#producto" role="button" style="background-color: #67cb57; border-radius: 5rem; padding:.9rem 3.5rem;">Comprar Ahora</a>
         </div>
 
     </section>
@@ -98,9 +116,9 @@
         <div class="box-container">
 
             <div class="box">
-                <span class="descuento">-5%</span>
+                <span class="descuento">-25%</span>
                 <div class="image">
-                    <img src="images/img-1.jpg" alt="">
+                    <img src="images/rosa_6.png" alt="">
                     <div class="iconos">
                         <a href="#" class="fas fa-heart"></a>
                         <a href="#" class="fa fa-cart-plus"></a>
@@ -109,16 +127,16 @@
                 </div>
 
                 <div class="contenido">
-                    <h3>Tulipanes Rosas</h3>
-                    <div class="precio">$12.500 <span>$15.000</span></div>
+                    <h3>Ramo Rosas Blancas</h3>
+                    <div class="precio">$17.500 <span>$25.000</span></div>
                 </div>
             </div>
     
 
             <div class="box">
-                <span class="descuento">-10%</span>
+                <span class="descuento">-50%</span>
                 <div class="image">
-                    <img src="images/img-2.jpg" alt="">
+                    <img src="https://sodimac.scene7.com/is/image/SodimacCL/22357?fmt=jpg&fit=fit,1&wid=420&hei=420" style="height: 300px;">
                     <div class="iconos">
                         <a href="#" class="fas fa-heart"></a>
                         <a href="#" class="fa fa-cart-plus"></a>
@@ -127,13 +145,13 @@
                 </div>
 
                 <div class="contenido">
-                    <h3>Tulipanes Amarillos</h3>
-                    <div class="precio">$12.500 <span>$15.000</span></div>
+                    <h3>Tierra de hojas Gaspar</h3>
+                    <div class="precio">$5.290 <span>$11.000</span></div>
                 </div>
             </div>
 
             <div class="box">
-                <span class="descuento">-5%</span>
+                <span class="descuento">-30%</span>
                 <div class="image">
                     <img src="images/img-3.jpg" alt="">
                     <div class="iconos">
@@ -145,12 +163,12 @@
 
                 <div class="contenido">
                     <h3>Tulipanes Rojos</h3>
-                    <div class="precio">$12.500 <span>$15.000</span></div>
+                    <div class="precio">$12.600 <span>$17.000</span></div>
                 </div>
             </div>
 
             <div class="box">
-                <span class="descuento">-5%</span>
+                <span class="descuento">-30%</span>
                 <div class="image">
                     <img src="images/img-4.jpg" alt="">
                     <div class="iconos">
@@ -162,65 +180,13 @@
 
                 <div class="contenido">
                     <h3>Tulipanes Naranjos</h3>
-                    <div class="precio">$12.500 <span>$15.000</span></div>
+                    <div class="precio">$12.600 <span>$17.000</span></div>
                 </div>
             </div>
 
         
             <div class="box">
-                <span class="descuento">-5%</span>
-                <div class="image">
-                    <img src="images/img-5.jpg" alt="">
-                    <div class="iconos">
-                        <a href="#" class="fas fa-heart"></a>
-                        <a href="#" class="fa fa-cart-plus"></a>
-                        <a href="#" class="fas fa fa-share"></a>
-                    </div>
-                </div>
-
-                <div class="contenido">
-                    <h3>Tulipanes Blancos</h3>
-                    <div class="precio">$12.500 <span>$15.000</span></div>
-                </div>
-            </div>
-
-            
-            <div class="box">
-                <span class="descuento">-5%</span>
-                <div class="image">
-                    <img src="images/img-6.jpg" alt="">
-                    <div class="iconos">
-                        <a href="#" class="fas fa-heart"></a>
-                        <a href="#" class="fa fa-cart-plus"></a>
-                        <a href="#" class="fas fa fa-share"></a>
-                    </div>
-                </div>
-
-                <div class="contenido">
-                    <h3>Tulipanes Blancos</h3>
-                    <div class="precio">$12.500 <span>$15.000</span></div>
-                </div>
-            </div>
-
-            <div class="box">
-                <span class="descuento">-10%</span>
-                <div class="image">
-                    <img src="images/img-7-rosa.png" alt="">
-                    <div class="iconos">
-                        <a href="#" class="fas fa-heart"></a>
-                        <a href="#" class="fa fa-cart-plus"></a>
-                        <a href="#" class="fas fa fa-share"></a>
-                    </div>
-                </div>
-
-                <div class="contenido">
-                    <h3>Rosas Rojas</h3>
-                    <div class="precio">$12.500 <span>$15.000</span></div>
-                </div>
-            </div>
-
-            <div class="box">
-                <span class="descuento">-10%</span>
+                <span class="descuento">-25%</span>
                 <div class="image">
                     <img src="images/rosa_2.png" alt="">
                     <div class="iconos">
@@ -232,14 +198,15 @@
 
                 <div class="contenido">
                     <h3>Rosas Rosadas</h3>
-                    <div class="precio">$12.500 <span>$15.000</span></div>
+                    <div class="precio">$11.250 <span>$15.000</span></div>
                 </div>
             </div>
 
+            
             <div class="box">
-                <span class="descuento">-10%</span>
+                <span class="descuento">-50%</span>
                 <div class="image">
-                    <img src="images/rosa_6.png" alt="">
+                    <img src="images/product2.png" alt="">
                     <div class="iconos">
                         <a href="#" class="fas fa-heart"></a>
                         <a href="#" class="fa fa-cart-plus"></a>
@@ -248,11 +215,11 @@
                 </div>
 
                 <div class="contenido">
-                    <h3>Rosas Blancas</h3>
-                    <div class="precio">$12.500 <span>$15.000</span></div>
+                    <h3>Macetero Plastico</h3>
+                    <div class="precio">$990 <span>$2.000</span></div>
                 </div>
             </div>
-            
+   
     </section>
  
 
@@ -280,12 +247,10 @@
 
             <div class="box">
                 <h3>Sobre Nosotros</h3>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-                    Lorem Ipsum has been the industry's 
-                    standard dummy text ever since the 1500s, 
-                    when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
-                    It has survived not only five centuries, but also the leap into electronic typesetting, 
-                    remaining essentially unchanged.</p>
+                <p>
+                    Somos una empresa dedicada a proveer los mejores
+                    productos para la decoraciones o cuidado de tus plantas. 
+                </p>
             </div>
 
             <div class="box">
@@ -298,11 +263,11 @@
             <div class="box">
                 <h3>links rapidos</h3>
                 <a href="index.html">Inicio</a>
-                <a href="#flores">Flores</a>
+                <a href="flores.html">Flores</a>
                 <a href="maceteros.html">Maceteros</a>
-                <a href="#tierra">tierra de hojas</a>
-                <a href="#subscricion">Arbustos</a>
-                <a href="#contacto">contacto</a>
+                <a href="tierra.html">tierra de hojas</a>
+                <a href="arbustos.html">Arbustos</a>
+                <a href="#">Subscripción</a>
             </div>
 
 
@@ -325,7 +290,6 @@
 
 
 
-    
-    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
 </html>
