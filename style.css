@@ -442,7 +442,9 @@ section{
     border-top: .1rem solid rgba(0, 0, 0, .1);
 }
 
-
+.footer {
+    background: #fff;
+}
 
 /*ADAPTAR PANTALLA*/
 @media (max-width:991px){
@@ -518,3 +520,20 @@ section{
     width:100%;
 }
 
+.formulario {
+    margin-top: 100px;
+    
+}
+
+.icontam {
+    font-size: 3rem;
+}
+
+.iconspace {
+    margin-left: 80px;
+    margin-right: 80px;;
+}
+
+.fondito {
+    background: url("images/home-bg.jpg")
+}
