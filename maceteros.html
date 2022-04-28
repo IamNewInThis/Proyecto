@@ -41,13 +41,13 @@
                     <a class="nav-link"  href="arbustos.html">Arbustos</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link"  href="#">Subscripción</a>
+                    <a class="nav-link"  href="subscripcion.html">Subscripción</a>
                   </li>
                 </ul>
                 <div class="icono">
                     <a href="#" class="fas fa fa-heart"></a>
                     <a href="#" class="fas fa fa-shopping-cart"></a>
-                    <a href="#" class="fas fa fa-user"></a>  
+                    <a href="#" class="fas fa fa-user" id="user-btn"></a>  
                     <a href="#" class="fas fa fa-search"></a>   
                 </div>
               </div>
@@ -55,7 +55,40 @@
           </nav>
     </header>
     
-    <!--SLIDER-->
+
+<!--------------------------ICONO DE USER-------------------------->
+<div class="user-icon">
+    <section>
+        <div id="cerrar"><span>cerrar</span></div>
+        <!--<div id="cerrar"><span><a class="fas fa fa-close"></a></span></div>-->
+        <h3 class="titulo">Iniciar Sesion</h3>
+        <div class="row">      
+            </div class="col-md-6 offset-md-6">
+                <div class="flex">     
+                    <form action="" class="mt-5 border p-5 bg-light shadow">
+                        <div class="mb-3 col-md-12">
+                            <label for="email">Email</label>
+                            <input type="email" class="form-control" name="email" id="email" maxlength="30" required>
+                        </div>
+    
+                        <div class="mb-3 col-md-12">
+                            <label for="nombre">contraseña</label>
+                            <input type="password" class="form-control" name="nombre" id="nombre" maxlength="20">
+                        </div>
+
+                        <div class="col-md-12">
+                            <input type="submit" value="Iniciar Sesion" class="btn btn-outline-success" style="background-color: #67cb57; border-radius: 5rem; padding:.9rem 3.5rem;">
+                        </div>
+                    
+                    </form>
+                    <p class="text-center mt-3"><a href="registro.html">Registrarse</a></p>
+            </div>
+
+        </div>
+    </section>
+</div>
+
+<!-----------------------SLIDER------------------------>
 
     <section class="home-slider" id="home-slider">
         <div class="contenido-slider">

@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Flower Secrets</title>
+
+        <!--JQUERY-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/dojo/1.13.0/dojo/dojo.js"></script> 
+
+        <!--ARCHIVO CSS-->
+        <link rel="stylesheet" href="style.css">
+    
+        <!--ICON REMIX -->
+        <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    
+        <!--FONT AWESOME -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    
+        <!-- BOOTSTRAP -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+<script>
+  $(document).ready(function(){
+    var mensaje = "";
+
+    $("#alerta").hide();
+
+    $("#nombre").focusout(function(){
+      
+      if($("#nombre").val().length == 0){
+        mensaje = "Debe ingresar nombre";
+        $("#alerta").html(mensaje);
+        $("#alerta").show();
+      }
+
+    });
+    
+  })
+
+
+
+</script>
+
+
+</head>
+<body>
+<!-- BARRA CON MENÚ -->
+<header>
+    <nav class="navbar navbar-expand-lg navbar-light colornvar">
+        <div class="container-fluid">
+            <a class="logo" href="#">Flower <span>Secrets</span></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-around" id="navbarNav">
+
+                    <ul class="navbar-nav">
+                      <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="index.html">Inicio</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="flores.html">Flores</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="maceteros.html">Macetero</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="tierra.html">Tierra de hojas</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="arbustos.html">Arbustos</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="subscripcion.html">Subscripción</a>
+                      </li>
+                    </ul>
+                <div class="icono">
+                    <a href="#" class="fas fa fa-heart"></a>
+                    <a href="#" class="fas fa fa-shopping-cart"></a>
+                    <a href="#" class="fas fa fa-user" id="user-btn"></a>  
+                    <a href="#" class="fas fa fa-search"></a>   
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<!--------------------------ICONO DE USER-------------------------->
+<div class="user-icon">
+  <section>
+      <div id="cerrar"><span>cerrar</span></div>
+      <!--<div id="cerrar"><span><a class="fas fa fa-close"></a></span></div>-->
+      <h3 class="titulo">Iniciar Sesion</h3>
+      <div class="row">      
+          </div class="col-md-6 offset-md-6">
+              <div class="flex">     
+                  <form action="" class="mt-5 border p-5 bg-light shadow">
+                      <div class="mb-3 col-md-12">
+                          <label for="email">Email</label>
+                          <input type="email" class="form-control" name="email" id="email" maxlength="30" required>
+                      </div>
+  
+                      <div class="mb-3 col-md-12">
+                          <label for="nombre">contraseña</label>
+                          <input type="password" class="form-control" name="nombre" id="nombre" maxlength="20">
+                      </div>
+
+                      <div class="col-md-12">
+                          <input type="submit" value="Iniciar Sesion" class="btn btn-outline-success" style="background-color: #67cb57; border-radius: 5rem; padding:.9rem 3.5rem;">
+                      </div>
+                  
+                  </form>
+                  <p class="text-center mt-3"><a href="registro.html">Registrarse</a></p>
+          </div>
+
+      </div>
+  </section>
+</div>
+
+<!------------------------------------SUBSCRIPCION  ------------------------------------------------------>
+<section class="formulario">
+    <div class="row">
+
+      <!--ALERTA-->
+      <div class="alert alert-danger" role="alert" id="alerta"></div>
+
+        <div class="col-lg-5 p-3" style="background: rgb(253, 254, 254,.3);">
+            <img src="images/contact-img.svg" alt="quesealoquediosquiera">
+        </div>
+        
+        <div class="col-lg-7 p-5" style="background: rgb(253, 254, 254,.3);">
+            <H1 class="text-center">SUSCRIPCIÓN</H1>
+            <div class="d-flex justify-content-center mt-5">
+                <i class="fa-brands fa-cc-paypal icontam"></i>
+                <i class="fa-solid fa-credit-card icontam iconspace"></i>
+                <i class="fa-brands fa-cc-visa icontam"></i>
+            </div>
+            
+            <form>
+              
+                <div class="form-floating mb-4 mt-5">
+                    <input type="text" class="form-control" id="nombre" placeholder="name" name="nombre">
+                    <label for="floatingInput">Nombre</label>
+                </div>
+                
+                <div class="form-floating mb-4">
+                    <input type="text" class="form-control" id="apellido" placeholder="Apellido">
+                    <label for="floatingPassword">Apellido</label>
+                </div>
+                
+                  <div class="form-floating mb-4">
+                    <input type="text" class="form-control" id="nro" placeholder="Número de tarjeta">
+                    <label for="floatingInput">Número de tarjeta</label>
+                  </div>
+                  <div class="form-floating mb-4">
+                    <input type="date" class="form-control" id="fecha" placeholder="Fecha de vencimiento">
+                    <label for="floatingPassword">Fecha de vencimiento</label>
+                  </div>
+
+                  <div class="form-floating mb-4">
+                    <input type="number" class="form-control" id="codigo" placeholder="Código de seguridad (CVV)">
+                    <label for="floatingPassword">Código de seguridad (CVV)</label>
+                  </div>
+                  
+                  <div class="d-flex justify-content-between">
+                    <span class="fs-3">Precio suscripción $5.200 por mes</span>
+                    <button class="btn btn-danger btn-lg">Suscribirse</button>
+                  </div>
+
+            </form>    
+        </div>
+    </div> 
+</section>
+
+<!---------SECCION DE ICONOS--------->    
+<section class="icono-container">
+        
+  <div class="iconos">
+      <img src="images/icon-1.png" alt="">
+      <div class="info">
+          <h3>Delivery gratis</h3>
+          <span>En compras superiores a $30.000</span>
+      </div>
+  </div>
+
+  <div class="iconos">
+      <img src="images/icon-3.png" alt="">
+      <div class="info">
+          <h3>Puntos De canjeo</h3>
+          <span>+15 por compras</span>
+          <span></span>
+      </div>
+  </div>
+
+  <div class="iconos">
+      <img src="images/icon-4.png" alt="">
+      <div class="info">
+          <h3>Subscripción</h3>
+          <span>5% de descuento en todos los productos</span>
+          <span></span>
+      </div>
+  </div>
+</section>
+
+<!------------------------------------FOOTER------------------------------------------------------>
+<section class="footer">
+    <div class="box-container">
+      <div class="box">
+        <h3>Sobre Nosotros</h3>
+          <p>Somos una empresa dedicada a proveer los mejores
+              productos para la decoraciones o cuidado de tus plantas.
+          </p>
+      </div>
+
+        <div class="box">
+            <h3>links extras</h3>
+            <a href="#">Mi Cuenta</a>
+            <a href="#">Mis ordenes</a>
+            <a href="#">Mis favoritos</a>
+        </div>
+
+        <div class="box">
+            <h3>links rapidos</h3>
+            <a href="index.html">Inicio</a>
+            <a href="flores.html">Flores</a>
+            <a href="maceteros.html">Maceteros</a>
+            <a href="tierra.html">tierra de hojas</a>
+            <a href="arbustos.html">Arbustos</a>
+            <a href="subscripcion.html">subscripcion</a>
+        </div>
+
+
+        <div class="box">
+            <h3>Información de contacto</h3>
+            <a href="#">+56971684528</a>
+            <a href="#">flowerscret@gmail.com</a>
+            <img src="images/payment.png" alt="">
+            <a href="https://www.instagram.com/" class="social"><i class="ri-instagram-line"></i></a>
+            <a href="https://www.twitter.com/" class="social"><i class="ri-twitter-line"></i></a>
+            <a href="https://www.facebook.com/" class="social"><i class="ri-facebook-fill"></i></a>
+        </div>
+
+    </div>
+
+  <div class="derechos">
+    Todos los derechos reservado a <span>Flower Secrets.</span>
+  </div>
+</section>
+
+  <script src="script.js"></script>  
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>    
+</body>

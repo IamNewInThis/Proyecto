@@ -1,5 +1,4 @@
-
- 
+ /*-----------------------CARRUCEL------------------------*/ 
 let imagenBtn = document.querySelectorAll('.vid-btn');
 
 imagenBtn.forEach(btn=>{
@@ -10,3 +9,15 @@ imagenBtn.forEach(btn=>{
         document.querySelector('#imagen-slider').src = src;
     });
 });
+
+/*-----------------------USER ICON------------------------*/ 
+let user = document.querySelector('.user-icon');
+
+document.querySelector('#user-btn').onclick=() =>{
+    user.classList.add('active');
+}
+
+document.querySelector('#cerrar').onclick=() =>{
+    user.classList.remove('active');
+}
+
