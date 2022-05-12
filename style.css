@@ -16,7 +16,7 @@
     outline: none;
     border: none;
     text-decoration: none; /*QUITAR LINEA DE LOS LINKS*/
-    text-transform: capitalize;
+    /*text-transform: capitalize;Incio de los input con mayusculas TODOS*/
     transition: .2s linear;
 }
 
@@ -495,7 +495,6 @@ section{
 .regis-container h3{
 
     color: var(--black);
-    flex: rem ;
     padding: 2rem 0;
 }
 
