@@ -16,7 +16,7 @@
     outline: none;
     border: none;
     text-decoration: none; /*QUITAR LINEA DE LOS LINKS*/
-    /*text-transform: capitalize;Incio de los input con mayusculas TODOS*/
+    /*text-transform: capitalize;Incio de los input con mayusculas TODOS */
     transition: .2s linear;
 }
 
@@ -356,6 +356,59 @@ section{
     font-size: 1.2rem;
 }
 
+/*-----------------------------------------generador-------------------------------*/
+.gen-div.active{
+    right: 0;
+    background: #ecf0f1;
+    box-shadow: 0 2px 6px rgb(0 21 64 / 10%), 0 10px 20px rgb(0 21 64 / 5%);
+}
+.titulo-gen{
+    text-align: center;
+    letter-spacing: 0.5ch;
+    text-transform: uppercase;
+}
+
+.btn-cerrar-popup{
+    display:flex;
+    justify-content: flex-end;
+}
+.btn-cerrar-popup button{
+    border: none;
+    background: #e74c3c;
+    padding: 5px;
+    color: #fff;
+}
+.tiempo{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.recomendar-container{
+    display: flex;
+    justify-content: center;
+}
+.recomendar-container > button{
+    background: #2ecc71;
+    padding: 15px 30px;
+    color: #fff;
+    letter-spacing: 0.2ch;
+}
+.recomendar-container > button:hover{
+    background: #27ae60;
+}
+.tiempo-container{
+    display: flex;
+    justify-content: space-around;
+}
+.gen-div{
+    position: fixed;
+    top: 0;
+    right: -110%;
+    width: 40rem; /*ANCHURA DEL RECUARDRO*/
+    z-index: 1100;
+    background: var(--white);
+    height: 40vh;/*LARGO DEL RECUADRO*/
+}
 
 
 
