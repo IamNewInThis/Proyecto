@@ -122,19 +122,19 @@
         <h3 class="titulo-gen">Generar</h3>
         <P>Si te sientes indeciso presiona este boton que te recomendara una planta segun el clima</P>
         <div class="row">      
-            </div class="col-md-6 offset-md-6">
+            <div class="d-flex" style="justify-content:'center'">
                 <div class="tiempo">
                     <div class="recomendar-container">
                         <button id="solicitarclima">Recomendar</button>
                     </div>
                     <table class="table" id="tabla">
-                        <thead>
-        
+                        <thead>        
                         <tr>
                             <th scope="col">Pais</th>
                             <th scope="col">Comuna</th>
                             <th scope="col">temperatura mínima</th>
                             <th scope="col">temperatura máxima</th>
+                            <th scope="col">icono</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -144,39 +144,21 @@
                         </tbody>
                         </table>
                 </div>
-
+            </div>
+        </div>
+        <!----------------api de las plantas----------------------->
+        <div class="row">
+            <div class="col-md-12">
+                <span class="fuenteletra">Su planta predilecta es:</span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col" id="planta_eleccion">
+                <!-------AQUI PONDRÍA MI PLANTA SI LA TUVIERA :C-->
+            </div>
         </div>
     </section>
 </div>
-
-    <section class="icono-container">
-        
-        <div class="iconos">
-            <img src="images/icon-1.png" alt="">
-            <div class="info">
-                <h3>Delivery gratis</h3>
-                <span>En compras superiores a $30.000</span>
-            </div>
-        </div>
-
-        <div class="iconos">
-            <img src="images/icon-3.png" alt="">
-            <div class="info">
-                <h3>Puntos De canjeo</h3>
-                <span>+15 por compras</span>
-                <span></span>
-            </div>
-        </div>
-
-        <div class="iconos">
-            <img src="images/icon-4.png" alt="">
-            <div class="info">
-                <h3>Subscripción</h3>
-                <span>5% de descuento en todos los productos</span>
-                <span></span>
-            </div>
-        </div>
-    </section>
 
     <!--PRODUCTOS-->
     <section class="productos" id="producto">
