@@ -48,6 +48,9 @@
                   <li class="nav-item">
                     <a class="nav-link" href="subscripcion.html">Subscripción</a>
                   </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#" id="gen">Generar</a>
+                  </li>
                 </ul>
                 <div class="icono">
                     <a href="#" class="fas fa fa-heart" id="heart-btn"></a>
@@ -92,6 +95,41 @@
     </section>
 </div>
 
+<!---------------------GENERADOR-------------------------->
+<div class="gen-div">
+    <section>
+        <div class="btn-cerrar-popup" id="cerrar-popup"><button>X</button></div>
+        <!--<div id="cerrar"><span><a class="fas fa fa-close"></a></span></div>-->
+        <h3 class="titulo-gen">Generar</h3>
+        <P>Si te sientes indeciso presiona este boton que te recomendara una planta segun el clima</P>
+        <div class="row">      
+            </div class="col-md-6 offset-md-6">
+                <div class="tiempo">
+                    <div class="recomendar-container">
+                        <button id="solicitarclima">Recomendar</button>
+                    </div>
+                    <table class="table" id="tabla">
+                        <thead>
+        
+                        <tr>
+                            <th scope="col">Pais</th>
+                            <th scope="col">Comuna</th>
+                            <th scope="col">temperatura mínima</th>
+                            <th scope="col">temperatura máxima</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                        </table>
+                </div>
+
+        </div>
+    </section>
+</div>
+
 <!------------------REGISTRO--------------------->
 <section class="formulario">
     <div class="row">
@@ -102,17 +140,19 @@
         
         <div class="col-lg-7 p-5" style="background: rgb(253, 254, 254,.3);">
             <div class="signup-form">
-                <form action="" class="mt-5 border p-5 bg-light shadow" id="formulario_registro" >
+                <form action="" class="mt-5 border p-5 bg-light shadow">
                     <h3>REGISTRO</h3>
                     <div class="row">
+                        <div class="alert alert-danger" role="alert" id="alerta">
+                        </div>
                         
                         <div class="form-floating mb-3 col-6 p-2">
-                            <input type="text" class="form-control" id="nombre_1" maxlength="30"  placeholder="Nombre" style="font-size: 1.3rem;">
+                            <input type="text" class="form-control" id="id_nomb"  name="nombre" placeholder="Nombre" style="font-size: 1.3rem;">
                             <label for="floatingInput">Nombre</label>
                         </div>
                     
                         <div class="form-floating mb-3 col-6 p-2">
-                            <input type="text" class="form-control" id="nombre_2" maxlength="30" placeholder="Apellido" style="font-size: 1.3rem;">
+                            <input type="text" class="form-control" id="id_ape" placeholder="Apellido" style="font-size: 1.3rem;">
                             <label for="floatingPassword">Apellido</label>
                         </div>
                         
@@ -188,8 +228,10 @@
             </div>
         </div>
     </section>
-
-    <script src="script.js"></script>   
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>  
+    <script src="jquery.rut.min.js"></script>
+    <script src="script.js"></script>  
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>    
+    <script src="apiclima.js"></script>
 </body>
 </html>

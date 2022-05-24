@@ -16,7 +16,7 @@
     outline: none;
     border: none;
     text-decoration: none; /*QUITAR LINEA DE LOS LINKS*/
-    /*text-transform: capitalize;Incio de los input con mayusculas TODOS */
+    /*text-transform: capitalize;Incio de los input con mayusculas TODOS*/
     transition: .2s linear;
 }
 
@@ -291,6 +291,10 @@ section{
     right: 0;
 }
 
+.gen-di.active{
+    right: 0;
+}
+
 .user-icon #cerrar{
     text-align: right;
     margin-bottom: 2.5rem;
@@ -409,7 +413,6 @@ section{
     background: var(--white);
     height: 40vh;/*LARGO DEL RECUADRO*/
 }
-
 
 
 
