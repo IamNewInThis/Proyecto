@@ -63,7 +63,29 @@ $(document).ready(function () {
     $("#id_email").focusout(function () {
         if ($("#id_email").val().length == 0) {
             //mostrar alerta
-            mensaje = "Debe ingresar email";
+            mensaje = "Debe ingresar Email";
+            $("#alerta").html(mensaje);
+            $("#alerta").show();
+        } else {
+            $("#alerta").hide();
+        }
+    });
+
+    $("#id_pass").focusout(function () {
+        if ($("#id_pass").val().length == 0) {
+            //mostrar alerta
+            mensaje = "Debe ingresar Contraseña";
+            $("#alerta").html(mensaje);
+            $("#alerta").show();
+        } else {
+            $("#alerta").hide();
+        }
+    });
+
+    $("#id_direc").focusout(function () {
+        if ($("#id_direc").val().length == 0) {
+            //mostrar alerta
+            mensaje = "Debe ingresar Dirección";
             $("#alerta").html(mensaje);
             $("#alerta").show();
         } else {
