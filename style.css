@@ -361,6 +361,12 @@ section{
 }
 
 /*-----------------------------------------generador-------------------------------*/
+
+.fuenteletra {
+    font-size: 14px;
+    font-weight: 600;
+
+} /* tipo de fuente en el generador */
 .gen-div.active{
     right: 0;
     background: #ecf0f1;
@@ -411,7 +417,7 @@ section{
     width: 40rem; /*ANCHURA DEL RECUARDRO*/
     z-index: 1100;
     background: var(--white);
-    height: 40vh;/*LARGO DEL RECUADRO*/
+    height: 40rem;/*LARGO DEL RECUADRO*/
 }
 
 

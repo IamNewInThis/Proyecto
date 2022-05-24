@@ -4,10 +4,10 @@ $(document).ready(function(){
         navigator.geolocation.getCurrentPosition(mostrarPosicion);
         $('#solicitarclima').click(function(){
         getweather(resultado).then((clima)=>{
-                console.log(clima)
-                $('#tabla').append(`<tr><td>${clima.sys.country}</td><td>${clima.name}</td><td>${clima.main.temp_min}</td><td>${clima.main.temp_max}</td></tr>`)
+            $('#solicitarclima').prop('disabled', true);
+                $('#tabla').append(`<tr><td>${clima.sys.country}</td><td>${clima.name}</td><td>${clima.main.temp_min}</td><td>${clima.main.temp_max}</td>
+                <td><img src="http://openweathermap.org/img/w/${clima.weather[0].icon}.png"/></td></tr>`)
             })
-            
         })
     } else {
         alert("Tu navegador no soporta la geolocalización, actualiza tu navegador.");
