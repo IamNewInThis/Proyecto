@@ -1,0 +1,326 @@
+{% extends 'core/base.html' %}
+
+{% load static %}
+
+{% block content %}
+    
+<!------------------------------SLIDER--------------------------------->
+
+    <section class="home-slider" id="home-slider">
+        <div class="contenido-slider">
+            <h3>Tierra De Hojas</h3>
+            <p>La mejor tierra de hojas para cuidar tus plantas</p>
+            <a class="btn btn-outline-success" href="#producto" role="button" style="background-color: #67cb57; border-radius: 5rem; padding:.9rem 3.5rem;">Comprar Ahora</a>
+        </div>
+
+        <div class="controles">
+            <span class="vid-btn active" data-src="{% static 'core/images/slider_tierra' %}"></span>
+            <span class="vid-btn" data-src="{% static 'core/images/slider_ar4.jpg' %}"></span>
+            <span class="vid-btn" data-src="{% static 'core/images/slider_ar6.jpg' %}"></span>
+        </div>
+
+        <div class="image-container">
+            <img src="{% static 'core/images/slider_tierra.png' %}" id="imagen-slider" alt="">
+        </div>
+
+    </section>
+
+{% endblock %}
+
+{% block content_productos %}
+<!---------------------------------------------PRODUCTOS 1------------------------------------------------->
+<section class="productos" id="producto">
+
+    <div class="box-container">
+
+        <div class="box">
+            <span class="descuento">-5%</span>
+            <div class="image">
+                <img src= "https://sodimac.scene7.com/is/image/SodimacCL/772542_01?fmt=jpg&fit=fit,1&wid=420&hei=420" style="width: 320px; height: 350px;" alt="">                        <div class="iconos">
+                    <a href="#" class="fas fa-heart"></a>
+                    <a class="fa fa-cart-plus"  data-bs-target="#miModal" data-bs-toggle="modal"></a>
+                    <a href="#" class="fas fa fa-share"></a>
+                </div>
+            </div>
+
+            <div class="contenido">
+                <h3>Tierra de Hojas Armony</h3>
+                <div class="precio">$4.750 <span>5.000</span></div>
+            </div>
+        </div>
+
+<!---------------------------------------------MODAL 1------------------------------------------------->
+<div class="modal fade" id="miModal" aria-hidden="true" tabindex="-1" aria-labelledby="modalTitle">
+    <div class="modal-dialog modal-dialog-centered" style="max-width: 800px;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" id="modalTitle" style="color: #333; font-size: 2.5rem;">Tierra de Hojas Armony</h3>
+                <h3 class="modal-dialog">$4.750  </h3>
+                                    <!--BOTON DE CIERRE-->
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" style="width: 3rem;"></button>
+            </div>
+            <div class="modal-body">
+                <div class="modal-fullscreen"><img src="https://sodimac.scene7.com/is/image/SodimacCL/772542_01?fmt=jpg&fit=fit,1&wid=420&hei=420" style="height: 300px;"></div>
+
+                <div class="form-group">
+                    <label for="Cantidad">Cantidad</label>
+                    <select name="identificador" id="identificador" class="form-select" style="width:30%; height:35px; font-size: 1.3rem;">
+                        <option value="1" style="font-size: 1.3rem;">1</option>
+                        <option value="2" style="font-size: 1.3rem;">2</option>
+                        <option value="3" style="font-size: 1.3rem;">3</option>
+                        <option value="4" style="font-size: 1.3rem;">4</option>
+                    </select>
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary">Agregar Al Carro</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!---------------------------------------------PRODUCTOS 2------------------------------------------------->
+<div class="box">
+    <span class="descuento">-10%</span>
+    <div class="image">
+        <img src="https://sodimac.scene7.com/is/image/SodimacCL/3363686_01?fmt=jpg&fit=fit,1&wid=420&hei=420" style="width: 350px; height: 350px;" alt="">
+        <div class="iconos">
+            <a href="#" class="fas fa-heart"></a>
+            <a class="fa fa-cart-plus"  data-bs-target="#miModal2" data-bs-toggle="modal"></a>
+            <a href="#" class="fas fa fa-share"></a>
+        </div>
+   </div>
+
+    <div class="contenido">
+        <h3>Tierra de Hojas Anasac</h3>
+        <div class="precio">$9.000 <span>10.000</span></div>
+    </div>
+</div>
+
+<!-----------------------------------------------PRODUCTO MODAL 2----------------------------------------------------------->
+<div class="modal fade" id="miModal2" aria-hidden="true" tabindex="-1" aria-labelledby="modalTitle">
+    <div class="modal-dialog modal-dialog-centered" style="max-width: 800px;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" id="modalTitle" style="color: #333; font-size: 2.5rem;">Tierra de Hojas Anasac</h3>
+                <h3 class="modal-dialog">$9.000</h3>
+                                    <!--BOTON DE CIERRE-->
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" style="width: 3rem;"></button>
+            </div>
+            <div class="modal-body">
+                <div class="modal-fullscreen"><img src="https://sodimac.scene7.com/is/image/SodimacCL/3363686_01?fmt=jpg&fit=fit,1&wid=420&hei=420" style="height: 300px;"></div>
+
+                <div class="form-group">
+                    <label for="Cantidad">Cantidad</label>
+                    <select name="identificador" id="identificador" class="form-select" style="width:30%; height:35px; font-size: 1.3rem;">
+                        <option value="1" style="font-size: 1.3rem;">1</option>
+                        <option value="2" style="font-size: 1.3rem;">2</option>
+                        <option value="3" style="font-size: 1.3rem;">3</option>
+                        <option value="4" style="font-size: 1.3rem;">4</option>
+                    </select>
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary">Agregar Al Carro</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!---------------------------------------------PRODUCTOS 3------------------------------------------------->
+<div class="box">
+    <span class="descuento">-10%</span>
+    <div class="image">
+        <img src="https://sodimac.scene7.com/is/image/SodimacCL/839302?fmt=jpg&fit=fit,1&wid=420&hei=420" style="width: 350px; height: 350px;" alt="">
+        <div class="iconos">
+            <a href="#" class="fas fa-heart"></a>
+            <a class="fa fa-cart-plus"  data-bs-target="#miModal3" data-bs-toggle="modal"></a>
+            <a href="#" class="fas fa fa-share"></a>
+        </div>
+   </div>
+
+    <div class="contenido">
+        <h3>Tierra con abono Armony</h3>
+        <div class="precio">$9.000 <span>10.000</span></div>
+    </div>
+</div>
+
+<!-----------------------------------------------PRODUCTO MODAL 3----------------------------------------------------------->
+<div class="modal fade" id="miModal3" aria-hidden="true" tabindex="-1" aria-labelledby="modalTitle">
+    <div class="modal-dialog modal-dialog-centered" style="max-width: 800px;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" id="modalTitle" style="color: #333; font-size: 2.5rem;">Tierra con abono Armony</h3>
+                <h3 class="modal-dialog">$9.000 </h3>
+                                    <!--BOTON DE CIERRE-->
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" style="width: 3rem;"></button>
+            </div>
+            <div class="modal-body">
+                <div class="modal-fullscreen"><img src="https://sodimac.scene7.com/is/image/SodimacCL/839302?fmt=jpg&fit=fit,1&wid=420&hei=420" style="height: 300px;"></div>
+
+                <div class="form-group">
+                    <label for="Cantidad">Cantidad</label>
+                    <select name="identificador" id="identificador" class="form-select" style="width:30%; height:35px; font-size: 1.3rem;">
+                        <option value="1" style="font-size: 1.3rem;">1</option>
+                        <option value="2" style="font-size: 1.3rem;">2</option>
+                        <option value="3" style="font-size: 1.3rem;">3</option>
+                        <option value="4" style="font-size: 1.3rem;">4</option>
+                    </select>
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary">Agregar Al Carro</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!---------------------------------------------PRODUCTOS 4------------------------------------------------->
+<div class="box">
+    <span class="descuento">-5%</span>
+    <div class="image">
+        <img src="https://easycl.vtexassets.com/arquivos/ids/302108-800-auto?width=800&height=auto&aspect=true" style="width: 320px; height: 350px;" alt="">
+        <div class="iconos">
+            <a href="#" class="fas fa-heart"></a>
+            <a class="fa fa-cart-plus"  data-bs-target="#miModal4" data-bs-toggle="modal"></a>
+            <a href="#" class="fas fa fa-share"></a>
+        </div>
+    </div>
+
+    <div class="contenido">
+        <h3>Tierra de Hojas Roots</h3>
+        <div class="precio">$4.265 <span>$4.490</span></div>
+    </div>
+</div>
+
+<!-----------------------------------------------PRODUCTO MODAL 4----------------------------------------------------------->
+<div class="modal fade" id="miModal4" aria-hidden="true" tabindex="-1" aria-labelledby="modalTitle">
+    <div class="modal-dialog modal-dialog-centered" style="max-width: 800px;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" id="modalTitle" style="color: #333; font-size: 2.5rem;">Tierra de Hojas Roots</h3>
+                <h3 class="modal-dialog">$4.265</h3>
+                                    <!--BOTON DE CIERRE-->
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" style="width: 3rem;"></button>
+            </div>
+            <div class="modal-body">
+                <div class="modal-fullscreen"><img src="https://easycl.vtexassets.com/arquivos/ids/302108-800-auto?width=800&height=auto&aspect=true" style="height: 300px;"></div>
+
+                <div class="form-group">
+                    <label for="Cantidad">Cantidad</label>
+                    <select name="identificador" id="identificador" class="form-select" style="width:30%; height:35px; font-size: 1.3rem;">
+                        <option value="1" style="font-size: 1.3rem;">1</option>
+                        <option value="2" style="font-size: 1.3rem;">2</option>
+                        <option value="3" style="font-size: 1.3rem;">3</option>
+                        <option value="4" style="font-size: 1.3rem;">4</option>
+                    </select>
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary">Agregar Al Carro</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!---------------------------------------------PRODUCTOS 5------------------------------------------------->
+<div class="box">
+    <span class="descuento">-5%</span>
+    <div class="image">
+        <img src="https://sodimac.scene7.com/is/image/SodimacCL/732958?fmt=jpg&fit=fit,1&wid=420&hei=420" style="width: 320px; height: 350px;" alt="">
+        <div class="iconos">
+            <a href="#" class="fas fa-heart"></a>
+            <a class="fa fa-cart-plus"  data-bs-target="#miModal5" data-bs-toggle="modal"></a>
+            <a href="#" class="fas fa fa-share"></a>
+        </div>
+    </div>
+
+    <div class="contenido">
+        <h3>Sulfato de Fierro Best Garden</h3>
+        <div class="precio">$14.250 <span>$15.000</span></div>
+    </div>
+</div>
+
+<!-----------------------------------------------PRODUCTO MODAL 5----------------------------------------------------------->
+<div class="modal fade" id="miModal5" aria-hidden="true" tabindex="-1" aria-labelledby="modalTitle">
+    <div class="modal-dialog modal-dialog-centered" style="max-width: 800px;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" id="modalTitle" style="color: #333; font-size: 2.5rem;">Sulfato de Fierro Best Garden</h3>
+                <h3 class="modal-dialog">$14.250</h3>
+                                    <!--BOTON DE CIERRE-->
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" style="width: 3rem;"></button>
+            </div>
+            <div class="modal-body">
+                <div class="modal-fullscreen"><img src="https://sodimac.scene7.com/is/image/SodimacCL/732958?fmt=jpg&fit=fit,1&wid=420&hei=420" style="height: 300px;"></div>
+
+                <div class="form-group">
+                    <label for="Cantidad">Cantidad</label>
+                    <select name="identificador" id="identificador" class="form-select" style="width:30%; height:35px; font-size: 1.3rem;">
+                        <option value="1" style="font-size: 1.3rem;">1</option>
+                        <option value="2" style="font-size: 1.3rem;">2</option>
+                        <option value="3" style="font-size: 1.3rem;">3</option>
+                        <option value="4" style="font-size: 1.3rem;">4</option>
+                    </select>
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary">Agregar Al Carro</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!---------------------------------------------PRODUCTOS 6------------------------------------------------->
+<div class="box">
+    <span class="descuento">-15%</span>
+    <div class="image">
+        <img src="https://sodimac.scene7.com/is/image/SodimacCL/609922X?fmt=jpg&fit=fit,1&wid=420&hei=420" style="width: 300px; height: 350px;" alt="">
+        <div class="iconos">
+            <a href="#" class="fas fa-heart"></a>
+            <a class="fa fa-cart-plus"  data-bs-target="#miModal6" data-bs-toggle="modal"></a>
+            <a href="#" class="fas fa fa-share"></a>
+        </div>
+    </div>
+
+    <div class="contenido">
+        <h3>Tierra Compost Armony</h3>
+        <div class="precio">$6.800 <span>$8.000</span></div>
+    </div>
+</div>
+
+<!-----------------------------------------------PRODUCTO MODAL 6----------------------------------------------------------->
+<div class="modal fade" id="miModal6" aria-hidden="true" tabindex="-1" aria-labelledby="modalTitle">
+    <div class="modal-dialog modal-dialog-centered" style="max-width: 800px;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" id="modalTitle" style="color: #333; font-size: 2.5rem;">Tierra Compost Armony</h3>
+                <h3 class="modal-dialog">$6.800</h3>
+                                    <!--BOTON DE CIERRE-->
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" style="width: 3rem;"></button>
+            </div>
+            <div class="modal-body">
+                <div class="modal-fullscreen"><img src="https://sodimac.scene7.com/is/image/SodimacCL/609922X?fmt=jpg&fit=fit,1&wid=420&hei=420" style="height: 300px;"></div>
+    
+                <div class="form-group">
+                    <label for="Cantidad">Cantidad</label>
+                    <select name="identificador" id="identificador" class="form-select" style="width:30%; height:35px; font-size: 1.3rem;">
+                        <option value="1" style="font-size: 1.3rem;">1</option>
+                        <option value="2" style="font-size: 1.3rem;">2</option>
+                        <option value="3" style="font-size: 1.3rem;">3</option>
+                        <option value="4" style="font-size: 1.3rem;">4</option>
+                    </select>
+                </div>
+    
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary">Agregar Al Carro</button>
+            </div>
+        </div>
+    </div>
+{% endblock %}
