@@ -36,5 +36,8 @@ def tierra(request):
 def arbustos(request):
     return render(request,'core/arbustos.html')
 
+def registro(request):
+    return render(request,'core/Registro.html')
+
 
 
