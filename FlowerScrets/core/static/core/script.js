@@ -37,6 +37,24 @@ $(document).ready(function () {
     var mensaje = "";
     console.log("probando equisde")
     $("#alerta").hide();
+    document.getElementById('formularioregistro').addEventListener('submit', (e) => {
+        e.preventDefault();
+        var nombre = document.getElementById('id_nomb').value;
+        var apellido = document.getElementById('id_ape').value;
+        var direccion = document.getElementById('id_direc').value;
+        var numtel = document.getElementById('id_num').value;
+        var email = document.getElementById('id_email').value;
+        var password = document.getElementById('id_pass').value;
+        var fechnac = document.getElementById('id_date').value;
+        var rut = document.getElementById('id_rut').value;
+        console.log(nombre,apellido,direccion,numtel,email,password,fechnac,rut);
+        if (nombre.length<5){
+            console.log('validacion nobmre')
+            return;
+        }
+        // AQUÍ SE COMENTA LA MIERDA DE LAS VALIDACIONES XD XD 
+        $( "#formularioregistro" ).submit();
+    })
 
     $("#id_nomb").focusout(function () {
         if ($("#id_nomb").val().length == 0) {

@@ -1,5 +1,8 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
+from django.contrib.auth.models import User
+from core.models import Cuenta 
+from core.forms import cuentaForm
 
 #CREAR UN CONSTRUCTOR
 class persona:
@@ -37,7 +40,14 @@ def arbustos(request):
     return render(request,'core/arbustos.html')
 
 def registro(request):
+    if request.method=='POST':
+        usuario = User.objects.create_user(username='pepe',email='corneta@duoc.cl',password='elmaricon123')
+        cuenta = Cuenta.objects.create(rut='20146051-4',fechnac='2022-06-22',direcc='av siempre viva',user_id=usuario.id,numte=74341877)
+        print(usuario)
+        print(cuenta)
     return render(request,'core/Registro.html')
+
+
 
 
 
