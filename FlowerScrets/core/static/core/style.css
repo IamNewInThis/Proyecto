@@ -284,7 +284,6 @@ section{
     width: 40rem; /*ANCHURA DEL RECUARDRO*/
     z-index: 1100;
     background: var(--white);
-    height: 55vh;/*LARGO DEL RECUADRO*/
 }
 
 .user-icon.active{
@@ -701,4 +700,62 @@ section{
     background: #ffc0cb !important;
     width:100%;
 }
+/*---------------------------------------------------------------------------------*/
+/*------------------------------       Menu Bar     -------------------------------*/
+/*---------------------------------------------------------------------------------*/
+.navbar {
+    background: #1b54077a;
+}
+.sanfran{
+    font-family: 'Lobster', cursive;
+    color: #ffff00;
+    font-size: 20px;
+}
+.sanfran:hover{
+    font-family: 'Lobster', cursive;
+    color: rgb(84, 255, 16);
+    font-size: 20px;
+}
+.customNavbar{
+    color: #3bb411 !important;
+}
 
+/*---------------------------------------------------------------------------------*/
+/*------------------------------      Carrito       -------------------------------*/
+/*---------------------------------------------------------------------------------*/
+
+.icono li{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    
+}
+
+
+.rojo{
+    color:#1b54077a;
+    font-size: 17px;
+}
+.rojo:hover{
+    color: rgba(255, 0, 0, 0.692);
+    text-shadow: grey 2px 2px 3px;
+}
+#pagar :hover {
+    color: rgb(4, 94, 228);
+    font-weight: 300;
+    background-color: #09a0e63b;
+}
+#menosProducto{
+    color: rgb(121, 118, 118);
+}
+#menosProducto:hover{
+    color: rgba(206, 22, 22, 0.925);
+    cursor: pointer;
+}
+#masProducto{
+    color: rgb(121, 118, 118);
+}
+#masProducto:hover{
+    color: rgb(9, 165, 9);
+    cursor: pointer;
+}
