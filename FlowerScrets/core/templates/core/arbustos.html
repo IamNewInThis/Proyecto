@@ -27,6 +27,30 @@
 {% endblock %}
 
 {% block content_productos %}
+<!--BOTON DE COMPARTIR-->
+<div class="modal fade" id="shapeModal" aria-hidden="true" tabindex="-1" aria-labelledby="modalTitle">
+    <div class="modal-dialog modal-dialog-centered" style="max-width: 500px; height: 500px;">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="modal-title" style="font-size: 3rem;">Compartir</h3>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <div class="popup">
+                <div class="content">
+                    <ul class="icons">
+                        <a href="https://www.facebook.com/" target="_BLANK"><i class="fab fa-facebook"><p></p></i></a>
+                        <a href="https://www.twitter.com/" target="_BLANK"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.instagram.com/" target="_BLANK"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.whatsapp.com/" target="_BLANK"><i class="fab fa-whatsapp"></i></a>
+                    </ul>
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+</div>
+
 <!---------------------------------------------PRODUCTO 1------------------------------------------------->
 <section class="productos" id="producto">
 
@@ -39,7 +63,7 @@
                 <div class="iconos">
                     <a href="#" class="fas fa-heart"></a>
                     <a class="fa fa-cart-plus"  data-bs-target="#miModal" data-bs-toggle="modal"></a>
-                    <a href="#" class="fas fa fa-share"></a>
+                    <a class="fas fa fa-share" data-bs-target="#shapeModal" data-bs-toggle="modal"></a>
                 </div>
             </div>
 
@@ -87,7 +111,7 @@
                 <div class="iconos">
                     <a href="#" class="fas fa-heart"></a>
                     <a class="fa fa-cart-plus"  data-bs-target="#miModal2" data-bs-toggle="modal"></a>
-                    <a href="#" class="fas fa fa-share"></a>
+                    <a class="fas fa fa-share" data-bs-target="#shapeModal" data-bs-toggle="modal"></a>
                 </div>
             </div>
 
@@ -135,7 +159,7 @@
                 <div class="iconos">
                     <a href="#" class="fas fa-heart"></a>
                     <a class="fa fa-cart-plus"  data-bs-target="#miModal3" data-bs-toggle="modal"></a>
-                    <a href="#" class="fas fa fa-share"></a>
+                    <a class="fas fa fa-share" data-bs-target="#shapeModal" data-bs-toggle="modal"></a>
                 </div>
             </div>
 

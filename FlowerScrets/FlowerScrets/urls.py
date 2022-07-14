@@ -25,6 +25,7 @@ urlpatterns = [
     path('',include('core.urls')),
     path('crud/',include('crud.urls')),
     path('admin/', admin.site.urls),
+    path('api/',include('api.urls')),
 ]
 
 if settings.DEBUG:

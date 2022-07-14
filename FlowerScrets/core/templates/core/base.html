@@ -8,6 +8,7 @@
 
     <!--ARCHIVO CSS-->
     <link rel="stylesheet" href="static\core/style.css">
+    <link rel="stylesheet" href="static\core/share.css">
     <!-- Inicio bloque CSS -->
     {% block css %}{% endblock %}
     <!-- FIN bloque CSS -->
@@ -224,7 +225,7 @@
             <h3>Información de contacto</h3>
             <a href="#">+56971684528</a>
             <a href="#">flowerscret@gmail.com</a>
-            <img src="images/payment.png" alt="">
+            <img src="{% static 'core/images/payment.png' %}" alt="">
             <a href="https://www.instagram.com/" class="social" target="_BLANK"><i class="ri-instagram-line"></i></a>
             <a href="https://www.twitter.com/" class="social" target="_BLANK"><i class="ri-twitter-line"></i></a>
             <a href="https://www.facebook.com/" class="social" target="_BLANK"><i class="ri-facebook-fill"></i></a>
