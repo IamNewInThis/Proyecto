@@ -1,0 +1,380 @@
+{% extends 'core/base.html' %}
+
+{% load static %}
+
+{% block content %}
+ 
+<!--SECCION DE INICIO-->
+        <section class="home" id="home">
+            <div class="contenido">
+                <h3>Flores</h3>
+                <h3>Maceteros</h3>
+                <h3>Arbustos</h3>
+                <h3>Tierra De Hojas</h3>
+                
+                <span>Tener el jardin o casa mas hermoso</span>
+                <span>Encuentra todo aquí para tenerlo</span>
+                <p>
+                    los mejores maceteros flores arbustos y tierra para cuidar tus plantas <br>
+                    todos nuestros productos con excelente calidad
+                </p>
+                <a class="btn btn-outline-success" href="#producto" role="button" style="background-color: #67cb57; border-radius: 5rem; padding:.9rem 3.5rem;">Comprar Ahora</a>
+            </div>
+        </section>
+{% endblock %}
+
+<!--------------------------ICONO CARRITO-------------------------->
+<div class="car-icon">
+
+    <section>
+        <div id="cerrar1"><span><a class="fas fa fa-close"></a></span></div>
+        <h3 class="titulo">Carrito de Compra</h3>
+        <div class="row">  
+
+            </div class="col-md-6 offset-md-6">
+                <div class="flex">     
+
+                <div>
+            </div>
+
+        </div>
+    </section>
+</div>
+
+<!---------------------GENERADOR-------------------------->
+<div class="gen-div">
+    <section>
+        <div class="btn-cerrar-popup" id="cerrar-popup"><button>X</button></div>
+        <!--<div id="cerrar"><span><a class="fas fa fa-close"></a></span></div>-->
+        <h3 class="titulo-gen">Generar</h3>
+        <P>Si te sientes indeciso presiona este boton que te recomendara una planta segun el clima</P>
+        <div class="row">      
+            </div class="col-md-6 offset-md-6">
+                <div class="tiempo">
+                    <div class="recomendar-container">
+                        <button id="solicitarclima">Recomendar</button>
+                    </div>
+                    <table class="table" id="tabla">
+                        <thead>
+        
+                        <tr>
+                            <th scope="col">Pais</th>
+                            <th scope="col">Comuna</th>
+                            <th scope="col">temperatura mínima</th>
+                            <th scope="col">temperatura máxima</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                        </table>
+                </div>
+
+        </div>
+    </section>
+</div>
+
+{% block content_productos %}
+<!------------------------------------------PRODUCTOS------------------------------------------>
+   <section class="productos" id="producto">
+
+    <div class="box-container">
+
+        <div class="box">
+            <span class="descuento">-25%</span>
+            <div class="image">
+                <img src="{% static 'core/images/rosa_6.png' %}" alt="">
+                <div class="iconos">
+                    <a href="#" class="fas fa-heart"></a>
+                    <a class="fa fa-cart-plus"  data-bs-target="#miModal" data-bs-toggle="modal"></a>
+                    <a href="#" class="fas fa fa-share"></a>
+                </div>
+            </div>
+
+            <div class="contenido">
+                <h3>Ramo Rosas Blancas</h3>
+                <div class="precio">$17.500 <span>$25.000</span></div>
+            </div>
+        </div>
+
+
+        <div class="box">
+            <span class="descuento">-50%</span>
+            <div class="image">
+                <img src="https://sodimac.scene7.com/is/image/SodimacCL/22357?fmt=jpg&fit=fit,1&wid=420&hei=420" style="height: 300px;">
+                <div class="iconos">
+                    <a href="#" class="fas fa-heart"></a>
+                    <a class="fa fa-cart-plus"  data-bs-target="#miModal2" data-bs-toggle="modal"></a>
+                    <a href="#" class="fas fa fa-share"></a>
+                </div>
+            </div>
+
+            <div class="contenido">
+                <h3>Tierra de hojas Gaspar</h3>
+                <div class="precio">$5.290 <span>$11.000</span></div>
+            </div>
+        </div>
+
+        <div class="box">
+            <span class="descuento">-30%</span>
+            <div class="image">
+                <img src="{% static 'core/images/img-3.jpg' %}" alt="">
+                <div class="iconos">
+                    <a href="#" class="fas fa-heart"></a>
+                    <a class="fa fa-cart-plus"  data-bs-target="#miModal3" data-bs-toggle="modal"></a>
+                    <a href="#" class="fas fa fa-share"></a>
+                </div>
+            </div>
+
+            <div class="contenido">
+                <h3>Tulipanes Rojos</h3>
+                <div class="precio">$12.600 <span>$17.000</span></div>
+            </div>
+        </div>
+
+        <div class="box">
+            <span class="descuento">-30%</span>
+            <div class="image">
+                <img src=" {% static 'core/images/img-4.jpg' %} " alt="">
+                <div class="iconos">
+                    <a href="#" class="fas fa-heart"></a>
+                    <a class="fa fa-cart-plus"  data-bs-target="#miModal4" data-bs-toggle="modal"></a>
+                    <a href="#" class="fas fa fa-share"></a>
+                </div>
+            </div>
+
+            <div class="contenido">
+                <h3>Tulipanes Naranjos</h3>
+                <div class="precio">$12.600 <span>$17.000</span></div>
+            </div>
+        </div>
+
+    
+        <div class="box">
+            <span class="descuento">-25%</span>
+            <div class="image">
+                <img src="{% static 'core/images/rosa_2.png' %} " alt="">
+                <div class="iconos">
+                    <a href="#" class="fas fa-heart"></a>
+                    <a class="fa fa-cart-plus"  data-bs-target="#miModal5" data-bs-toggle="modal"></a>
+                    <a href="#" class="fas fa fa-share"></a>
+                </div>
+            </div>
+
+            <div class="contenido">
+                <h3>Rosas Rosadas</h3>
+                <div class="precio">$11.250 <span>$15.000</span></div>
+            </div>
+        </div>
+
+        
+        <div class="box">
+            <span class="descuento">-50%</span>
+            <div class="image">
+                <img src="{% static 'core/images/product2.png' %}" alt="">
+                <div class="iconos">
+                    <a href="#" class="fas fa-heart"></a>
+                    <a class="fa fa-cart-plus"  data-bs-target="#miModal6" data-bs-toggle="modal"></a>
+                    <a href="#" class="fas fa fa-share"></a>
+                </div>
+            </div>
+
+            <div class="contenido">
+                <h3>Macetero Plastico</h3>
+                <div class="precio">$990 <span>$2.000</span></div>
+            </div>
+        </div>
+
+</section>
+
+<!------------------------------------MODAL------------------------------------------------------> 
+<div class="modal fade" id="miModal" aria-hidden="true" tabindex="-1" aria-labelledby="modalTitle">
+    <div class="modal-dialog modal-dialog-centered" style="max-width: 800px;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" id="modalTitle" style="color: #333; font-size: 2.5rem;">Ramo Rosas Blancas</h3>
+                <h3 class="modal-dialog">$26.565</h3>
+                                    <!--BOTON DE CIERRE-->
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" style="width: 3rem;"></button>
+            </div>
+            <div class="modal-body">
+                <div class="modal-fullscreen"><img src="{% static 'core/images/rosa_6.png' %}" style="height: 300px;"></div>
+
+                <div class="form-group">
+                    <label for="Cantidad">Cantidad</label>
+                    <select name="identificador" id="identificador" class="form-select" style="width:30%; height:35px; font-size: 1.3rem;">
+                        <option value="1" style="font-size: 1.3rem;">1</option>
+                        <option value="2" style="font-size: 1.3rem;">2</option>
+                        <option value="3" style="font-size: 1.3rem;">3</option>
+                        <option value="4" style="font-size: 1.3rem;">4</option>
+                    </select>
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary">Agregar Al Carro</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-----------------------------------------------PRODUCTO MODAL 2----------------------------------------------------------->
+<div class="modal fade" id="miModal2" aria-hidden="true" tabindex="-1" aria-labelledby="modalTitle">
+    <div class="modal-dialog modal-dialog-centered" style="max-width: 800px;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" id="modalTitle" style="color: #333; font-size: 2.5rem;">Tierra de hojas Gaspar</h3>
+                <h3 class="modal-dialog">$5.290</h3>
+                                    <!--BOTON DE CIERRE-->
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" style="width: 3rem;"></button>
+            </div>
+            <div class="modal-body">
+                <div class="modal-fullscreen"><img src="https://sodimac.scene7.com/is/image/SodimacCL/22357?fmt=jpg&fit=fit,1&wid=420&hei=420" style="height: 300px;"></div>
+
+                <div class="form-group">
+                    <label for="Cantidad">Cantidad</label>
+                    <select name="identificador" id="identificador" class="form-select" style="width:30%; height:35px; font-size: 1.3rem;">
+                        <option value="1" style="font-size: 1.3rem;">1</option>
+                        <option value="2" style="font-size: 1.3rem;">2</option>
+                        <option value="3" style="font-size: 1.3rem;">3</option>
+                        <option value="4" style="font-size: 1.3rem;">4</option>
+                    </select>
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary">Agregar Al Carro</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-----------------------------------------------PRODUCTO MODAL 3----------------------------------------------------------->
+<div class="modal fade" id="miModal3" aria-hidden="true" tabindex="-1" aria-labelledby="modalTitle">
+    <div class="modal-dialog modal-dialog-centered" style="max-width: 800px;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" id="modalTitle" style="color: #333; font-size: 2.5rem;">Tulipanes Rojos</h3>
+                <h3 class="modal-dialog">$12.600</h3>
+                                    <!--BOTON DE CIERRE-->
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" style="width: 3rem;"></button>
+            </div>
+            <div class="modal-body">
+                <div class="modal-fullscreen"><img src="{% static 'core/images/img-3.jpg' %}" style="height: 300px;"></div>
+
+                <div class="form-group">
+                    <label for="Cantidad">Cantidad</label>
+                    <select name="identificador" id="identificador" class="form-select" style="width:30%; height:35px; font-size: 1.3rem;">
+                        <option value="1" style="font-size: 1.3rem;">1</option>
+                        <option value="2" style="font-size: 1.3rem;">2</option>
+                        <option value="3" style="font-size: 1.3rem;">3</option>
+                        <option value="4" style="font-size: 1.3rem;">4</option>
+                    </select>
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary">Agregar Al Carro</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-----------------------------------------------PRODUCTO MODAL 4----------------------------------------------------------->
+<div class="modal fade" id="miModal4" aria-hidden="true" tabindex="-1" aria-labelledby="modalTitle">
+    <div class="modal-dialog modal-dialog-centered" style="max-width: 800px;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" id="modalTitle" style="color: #333; font-size: 2.5rem;">Tulipanes Naranjas</h3>
+                <h3 class="modal-dialog">$12.600</h3>
+                                    <!--BOTON DE CIERRE-->
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" style="width: 3rem;"></button>
+            </div>
+            <div class="modal-body">
+                <div class="modal-fullscreen"><img src="{% static 'core/images/img-4.jpg' %}" style="height: 300px;"></div>
+
+                <div class="form-group">
+                    <label for="Cantidad">Cantidad</label>
+                    <select name="identificador" id="identificador" class="form-select" style="width:30%; height:35px; font-size: 1.3rem;">
+                        <option value="1" style="font-size: 1.3rem;">1</option>
+                        <option value="2" style="font-size: 1.3rem;">2</option>
+                        <option value="3" style="font-size: 1.3rem;">3</option>
+                        <option value="4" style="font-size: 1.3rem;">4</option>
+                    </select>
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary">Agregar Al Carro</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-----------------------------------------------PRODUCTO MODAL 5----------------------------------------------------------->
+<div class="modal fade" id="miModal5" aria-hidden="true" tabindex="-1" aria-labelledby="modalTitle">
+    <div class="modal-dialog modal-dialog-centered" style="max-width: 800px;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" id="modalTitle" style="color: #333; font-size: 2.5rem;">Rosas Rosadas</h3>
+                <h3 class="modal-dialog">$11.250</h3>
+                                    <!--BOTON DE CIERRE-->
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" style="width: 3rem;"></button>
+            </div>
+            <div class="modal-body">
+                <div class="modal-fullscreen"><img src="{% static 'core/images/rosa_2.png' %}" style="height: 300px;"></div>
+
+                <div class="form-group">
+                    <label for="Cantidad">Cantidad</label>
+                    <select name="identificador" id="identificador" class="form-select" style="width:30%; height:35px; font-size: 1.3rem;">
+                        <option value="1" style="font-size: 1.3rem;">1</option>
+                        <option value="2" style="font-size: 1.3rem;">2</option>
+                        <option value="3" style="font-size: 1.3rem;">3</option>
+                        <option value="4" style="font-size: 1.3rem;">4</option>
+                    </select>
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary">Agregar Al Carro</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-----------------------------------------------PRODUCTO MODAL 6----------------------------------------------------------->
+<div class="modal fade" id="miModal6" aria-hidden="true" tabindex="-1" aria-labelledby="modalTitle">
+<div class="modal-dialog modal-dialog-centered" style="max-width: 800px;">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h3 class="modal-title" id="modalTitle" style="color: #333; font-size: 2.5rem;">Macetero Plastico</h3>
+            <h3 class="modal-dialog">$990</h3>
+                                <!--BOTON DE CIERRE-->
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" style="width: 3rem;"></button>
+        </div>
+        <div class="modal-body">
+            <div class="modal-fullscreen"><img src="{% static 'core/images/product2.png' %}" style="height: 300px;"></div>
+
+            <div class="form-group">
+                <label for="Cantidad">Cantidad</label>
+                <select name="identificador" id="identificador" class="form-select" style="width:30%; height:35px; font-size: 1.3rem;">
+                    <option value="1" style="font-size: 1.3rem;">1</option>
+                    <option value="2" style="font-size: 1.3rem;">2</option>
+                    <option value="3" style="font-size: 1.3rem;">3</option>
+                    <option value="4" style="font-size: 1.3rem;">4</option>
+                </select>
+            </div>
+
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-primary">Agregar Al Carro</button>
+        </div>
+    </div>
+</div>
+</div>
+{% endblock%}
+
+<script src="static\core/script.js"></script>
+<script src="static\core/apiclima.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+</body>
+</html>
