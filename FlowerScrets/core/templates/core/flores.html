@@ -33,112 +33,25 @@
 <section class="productos" id="producto">
 
     <div class="box-container">
-
-        <div class="box">
-            <span class="descuento">-5%</span>
-            <div class="image">
-                <img src="{% static 'core/images/img-1.jpg' %}" alt="">
-                <div class="iconos">
-                    <a href="#" class="fas fa-heart"></a>
-                    <a class="fa fa-cart-plus"  data-bs-target="#miModal" data-bs-toggle="modal"></a>
-                    <a href="#" class="fas fa fa-share"></a>
+            <div class="box">
+                <span class="descuento">-5%</span>
+                {%for p in flores %}
+                <div class="image">
+                    <img src="{{p.imagen.url}}" alt="">
+                    <div class="iconos">
+                        <a href="#" class="fas fa-heart"></a>
+                        <a class="fa fa-cart-plus"  data-bs-target="#miModal2" data-bs-toggle="modal"></a>
+                        <a href="#" class="fas fa fa-share"></a>
+                    </div>
                 </div>
-            </div>
 
-            <div class="contenido">
-                <h3>Tulipanes Rosados</h3>
-                <div class="precio">$15.200 <span>$16.500</span></div>
-            </div>
-        </div>
-
-
-        <div class="box">
-            <span class="descuento">-5%</span>
-            <div class="image">
-                <img src="{% static 'core/images/rosa_4.png' %}" alt="">
-                <div class="iconos">
-                    <a href="#" class="fas fa-heart"></a>
-                    <a class="fa fa-cart-plus"  data-bs-target="#miModal2" data-bs-toggle="modal"></a>
-                    <a href="#" class="fas fa fa-share"></a>
+                <div class="contenido">
+                    <h3>{{p.nombre}}</h3>
+                    <div class="precio">${{p.precio}} <span>$21.000</span></div>
                 </div>
+                {% endfor %}
             </div>
-
-            <div class="contenido">
-                <h3>Surtido De Rosas</h3>
-                <div class="precio">$19.950 <span>$21.000</span></div>
-            </div>
-        </div>
-
-        <div class="box">
-            <span class="descuento">-5%</span>
-            <div class="image">
-                <img src="{% static 'core/images/img-5.jpg' %}" alt="">
-                <div class="iconos">
-                    <a href="#" class="fas fa-heart"></a>
-                    <a class="fa fa-cart-plus"  data-bs-target="#miModal3" data-bs-toggle="modal"></a>
-                    <a href="#" class="fas fa fa-share"></a>
-                </div>
-            </div>
-
-            <div class="contenido">
-                <h3>Tulipanes Blancos</h3>
-                <div class="precio">$14.250 <span>$15.000</span></div>
-            </div>
-        </div>
-
-        <div class="box">
-            <span class="descuento">-5%</span>
-            <div class="image">
-                <img src="{% static 'core/images/cala-amarillo.png' %}" alt="">
-                <div class="iconos">
-                    <a href="#" class="fas fa-heart"></a>
-                    <a class="fa fa-cart-plus"  data-bs-target="#miModal4" data-bs-toggle="modal"></a>
-                    <a href="#" class="fas fa fa-share"></a>
-                </div>
-            </div>
-
-            <div class="contenido">
-                <h3>Calas Amarillas</h3>
-                <div class="precio">$14.250 <span>$15.000</span></div>
-            </div>
-        </div>
-
-    
-        <div class="box">
-            <span class="descuento">-5%</span>
-            <div class="image">
-                <img src="{%static 'core/images/gladiolo.png' %}" alt="">
-                <div class="iconos">
-                    <a href="#" class="fas fa-heart"></a>
-                    <a class="fa fa-cart-plus"  data-bs-target="#miModal5" data-bs-toggle="modal"></a>
-                    <a href="#" class="fas fa fa-share"></a>
-                </div>
-            </div>
-
-            <div class="contenido">
-                <h3>Gladiolo Blanco</h3>
-                <div class="precio">$16.150 <span>$17.000</span></div>
-            </div>
-        </div>
-
-        
-        <div class="box">
-            <span class="descuento">-5%</span>
-            <div class="image">
-                <img src="{% static 'core/images/claveles.png' %}" alt="">
-                <div class="iconos">
-                    <a href="#" class="fas fa-heart"></a>
-                    <a class="fa fa-cart-plus"  data-bs-target="#miModal6" data-bs-toggle="modal"></a>
-                    <a href="#" class="fas fa fa-share"></a>
-                </div>
-            </div>
-
-            <div class="contenido">
-                <h3>Surtido de Claveles</h3>
-                <div class="precio">$34.200 <span>$36.000</span></div>
-            </div>
-        </div>
-        
+    </div>
 </section>
 
 

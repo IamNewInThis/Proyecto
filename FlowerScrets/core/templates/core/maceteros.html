@@ -29,13 +29,13 @@
 
 <!-----------------------------PRODUCTOS----------------------------->
         <section class="productos" id="producto">
-
+            
             <div class="box-container">
-    
+            {%for p in maceteros %}
                 <div class="box">
                     <span class="descuento">-5%</span>
                     <div class="image">
-                        <img src="{% static 'core/images/mase1.png' %}" alt="">
+                        <img src="{{p.imagen.url}}" alt="" style="width: 300px; height: 300px;">
                         <div class="iconos">
                             <a href="#" class="fas fa-heart"></a>
                             <a class="fa fa-cart-plus"  data-bs-target="#miModal" data-bs-toggle="modal"></a>
@@ -44,98 +44,11 @@
                     </div>
     
                     <div class="contenido">
-                        <h3>Macetero Rectangular</h3>
-                        <div class="precio">$20.000 <span>$25.000</span></div>
+                        <h3>{{p.nombre}}</h3>
+                        <div class="precio">${{p.precio}} <span>$25.000</span></div>
                     </div>
                 </div>
-        
-    
-                <div class="box">
-                    <span class="descuento">-10%</span>
-                    <div class="image">
-                        <img src="{% static 'core/images/mase2.png' %}" alt="">
-                        <div class="iconos">
-                            <a href="#" class="fas fa-heart"></a>
-                            <a class="fa fa-cart-plus"  data-bs-target="#miModal2" data-bs-toggle="modal"></a>
-                            <a href="#" class="fas fa fa-share"></a>
-                        </div>
-                    </div>
-    
-                    <div class="contenido">
-                        <h3>Macetero Ceramico Circular</h3>
-                        <div class="precio">$12.500 <span>$15.000</span></div>
-                    </div>
-                </div>
-    
-                <div class="box">
-                    <span class="descuento">-5%</span>
-                    <div class="image">
-                        <img src="{%static 'core/images/mase3.png' %}" alt="">
-                        <div class="iconos">
-                            <a href="#" class="fas fa-heart"></a>
-                            <a class="fa fa-cart-plus"  data-bs-target="#miModal3" data-bs-toggle="modal"></a>
-                            <a href="#" class="fas fa fa-share"></a>
-                        </div>
-                    </div>
-    
-                    <div class="contenido">
-                        <h3>Macetero Amarillo</h3>
-                        <div class="precio">$12.500 <span>$15.000</span></div>
-                    </div>
-                </div>
-    
-                <div class="box">
-                    <span class="descuento">-5%</span>
-                    <div class="image">
-                        <img src="{% static 'core/images/mase4.png' %}" alt="">
-                        <div class="iconos">
-                            <a href="#" class="fas fa-heart"></a>
-                            <a class="fa fa-cart-plus"  data-bs-target="#miModal4" data-bs-toggle="modal"></a>
-                            <a href="#" class="fas fa fa-share"></a>
-                        </div>
-                    </div>
-    
-                    <div class="contenido">
-                        <h3>Macetero Ceramico Pequeño</h3>
-                        <div class="precio">$12.500 <span>$15.000</span></div>
-                    </div>
-                </div>
-    
-            
-                <div class="box">
-                    <span class="descuento">-5%</span>
-                    <div class="image">
-                        <img src="{% static 'core/images/mase5.png' %}" alt="">
-                        <div class="iconos">
-                            <a href="#" class="fas fa-heart"></a>
-                            <a class="fa fa-cart-plus"  data-bs-target="#miModal5" data-bs-toggle="modal"></a>
-                            <a href="#" class="fas fa fa-share"></a>
-                        </div>
-                    </div>
-    
-                    <div class="contenido">
-                        <h3>Macetero Blanco</h3>
-                        <div class="precio">$12.500 <span>$15.000</span></div>
-                    </div>
-                </div>
-    
-                
-                <div class="box">
-                    <span class="descuento">-15%</span>
-                    <div class="image">
-                        <img src="{% static 'core/images/mase6.png' %}" alt="">
-                        <div class="iconos">
-                            <a href="#" class="fas fa-heart"></a>
-                            <a class="fa fa-cart-plus"  data-bs-target="#miModal6" data-bs-toggle="modal"></a>
-                            <a href="#" class="fas fa fa-share"></a>
-                        </div>
-                    </div>
-    
-                    <div class="contenido">
-                        <h3>Macetero Rectangular Blanco</h3>
-                        <div class="precio">$12.500 <span>$15.000</span></div>
-                    </div>
-                </div>
+            {% endfor %}
         </section>
 
 

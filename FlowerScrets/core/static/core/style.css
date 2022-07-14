@@ -360,91 +360,13 @@ section{
     font-size: 1.2rem;
 }
 
-/*-----------------------------------------CART-ICON-------------------------------*/
-.car-icon{
-    position: fixed;
-    top: 0;
-    right: -110%;
-    width: 40rem; /*ANCHURA DEL RECUARDRO*/
-    z-index: 1100;
-    background: var(--white);
-    height: 35vh;/*LARGO DEL RECUADRO*/
-}
-
-.car-icon.active{
-    right: 0;
-}
-
-.gen-di.active{
-    right: 0;
-}
-
-.car-icon #cerrar1{
-    text-align: right;
-    margin-bottom: 2.5rem;
-}
-
-.car-icon #cerrar1 span{
-    cursor: pointer;
-    font-size: 2.5rem;
-    color: var(--black);
-    text-decoration: underline;
-}
-
-.car-icon #cerrar1 span:hover{
-    color: var(--black);
-}
-
-.car-icon .titulo{
-    text-align: center;
-    margin-bottom: 1rem;
-    color: var(--black);
-    font-size: 2.5rem;
-    text-transform: capitalize;
-}
-
-
-.car-icon .flex{
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1.5rem;
-    align-items: flex-start;
-}
-
-.car-icon .flex form{
-    flex: 1 1 40rem;
-    border-radius: .5rem;
-    padding: 2rem;
-    background-color: var(--white);
-}
-
-.car-icon .flex form h3{
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-    text-transform: uppercase;
-    text-align: center;
-    color: var(--black);
-}
-
-.car-icon .flex form .box{
-    width: 100%;
-    margin: 1rem 0;
-    border-radius: .5rem;
-    background-color: var(--white);
-    padding: 1.4rem;
-    font-size: 1.8rem;
-    color: var(--black);
-}
-
-.car-icon .olvido{
-    font-size: 1.2rem;
-}
-
-.car-icon .login{
-    font-size: 1.2rem;
-}
-
 /*-----------------------------------------generador-------------------------------*/
+
+.fuenteletra {
+    font-size: 14px;
+    font-weight: 600;
+
+} /* tipo de fuente en el generador */
 .gen-div.active{
     right: 0;
     background: #ecf0f1;
@@ -495,10 +417,8 @@ section{
     width: 40rem; /*ANCHURA DEL RECUARDRO*/
     z-index: 1100;
     background: var(--white);
-    height: 40vh;/*LARGO DEL RECUADRO*/
+    height: 40rem;/*LARGO DEL RECUADRO*/
 }
-
-
 
 
 

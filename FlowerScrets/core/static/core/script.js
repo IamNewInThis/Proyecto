@@ -32,11 +32,44 @@ document.querySelector('#cerrar-popup').onclick = () => {
 }
 
 /*-------------------VALIDACIÓN RUT y mensajes de error-------------------------*/
-
 $(document).ready(function () {
+    var validador = 0;
     var mensaje = "";
     console.log("probando equisde")
     $("#alerta").hide();
+    document.getElementById('formularioregistro').addEventListener('submit', (e) => {
+        e.preventDefault();
+        var nombre = document.getElementById('id_nomb').value;
+        var apellido = document.getElementById('id_ape').value;
+        var direccion = document.getElementById('id_direc').value;
+        var numtel = document.getElementById('id_num').value;
+        var email = document.getElementById('id_email').value;
+        var password = document.getElementById('id_pass').value;
+        var fechnac = document.getElementById('id_date').value;
+        var rut = document.getElementById('id_rut').value;
+        if (nombre.length<3){
+            alert('El nombre es demasiado corto');
+            return;
+        }
+        if (numtel.length<9){
+            alert('El número debe ser de 9 dígitos')
+            return;
+        }
+        if (numtel.length>9){
+            alert('El número debe ser de 9 dígitos')
+            return;
+        }
+        if (password.length<5){
+            alert('la contraseña debe ser de 5 caracteres o más')
+            return;        
+        }
+        if (validador==2){
+            alert('el rut ingresado no es válido')
+            return;
+        }
+         
+        $( "#formularioregistro" ).submit();
+    })
 
     $("#id_nomb").focusout(function () {
         if ($("#id_nomb").val().length == 0) {
@@ -127,13 +160,20 @@ $(document).ready(function () {
             }
             resultado = resultado % 11
             let dv = 11 - resultado
-            if (dv != dvp && $("#id_rut").val().length >0)  {
+            if (dv==11){
+                dv=0
+            } else if (dv==10){
+                dv='k'
+            }
+            if (dv != dvp && $("#id_rut").val().length >0) {
                 mensaje = "el rut es inválido"
                 $("#alerta").html(mensaje);
                 $("#alerta").show();
+                validador = 2;
                 console.log("ALERTA RUT INVALIDO")
             } else if (dv==dvp) {
                 $("#alerta").hide();
+                validador = 1;
             }
 
         });
