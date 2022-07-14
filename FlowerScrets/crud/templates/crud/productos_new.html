@@ -1,0 +1,59 @@
+{% extends 'crud/base.html' %}
+
+{% load static %}
+
+{% block title %}Nuevo Producto{% endblock %}
+
+{% block content %}
+<div class="container mt-4 mb-2 text-center bg-danger text-white py-5 rounded">
+    <h1>Agregar Nuevo Producto</h1>
+</div>
+{% endblock %}
+
+{% block main_content %}
+<div class="container mb-4">
+    <form action="" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="form-group mb-3">
+            <label for="idProducto" class="fw-bold">Código Producto</label>
+            <div class="input-group">
+                {{form.idProducto}}
+            </div>
+        </div>
+        <div class="form-group mb-3">
+            <label for="descripcion" class="fw-bold">Nombre Producto</label>
+            <div class="input-group">
+                {{form.nombre}}
+            </div>
+        </div>
+        <div class="form-group mb-3">
+            <label for="marca" class="fw-bold">Categoria</label>
+            <div class="input-group">
+                {{form.categoria}}
+            </div>
+        </div>
+        <div class="form-group mb-3">
+            <label for="precio_unitario" class="fw-bold">Precio Producto</label>
+            <div class="input-group">
+                {{form.precio}}
+            </div>
+        </div>
+        <div class="form-group mb-3">
+            <label for="stock" class="fw-bold">Stock</label>
+            <div class="input-group">
+                {{form.stock}}
+            </div>
+        </div>
+        <div class="form-group mb-3">
+            <label for="imagen" class="fw-bold">Imagen</label>
+            <div class="input-group">
+                {{form.imagen}}
+            </div>
+        </div>
+        <div class="text-center mt-4">
+            <input type="submit" class="btn btn-outline-primary btn-block py-2" id="registrar" value="Registrar">
+            <input type="reset" class="btn btn-outline-success btn-block py-2" id="limpiar" value="Limpiar">
+        </div>
+    </form>
+</div>
+{% endblock %}
