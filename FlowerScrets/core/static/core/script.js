@@ -31,7 +31,7 @@ document.querySelector('#cerrar-popup').onclick = () => {
     dada.classList.remove('active');
 }
 
-/*-------------------VALIDACIÓN RUT y mensajes de error-------------------------*/
+/*-------------------VALIDACIÓN REGISTRO COMPLETO-------------------------*/
 $(document).ready(function () {
     var validador = 0;
     var mensaje = "";
@@ -178,7 +178,7 @@ $(document).ready(function () {
 
         });
     })
-
+/*codeo para login validaciones*/
 });
 
 /*-----------------------VALIDAR TARJETA------------------------*/

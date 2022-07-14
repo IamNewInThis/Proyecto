@@ -12,7 +12,7 @@
         
         <div class="col-lg-7 p-5" style="background: rgb(253, 254, 254,.3);">
             <div class="signup-form">
-                <form method="post" class="mt-5 border p-5 bg-light shadow" id="formularioregistro">
+                <form method="post" class="mt-5 border p-5 bg-light shadow" id="formulariologeo">
                     {% csrf_token %}
                     <h3>INICIO DE SESION</h3>
                     <div class="row">
@@ -20,11 +20,11 @@
                         </div>
                         
                         <div class="form-floating mb-3 col-6 p-2">
-                            <input type="text" class="form-control" id="id_email"  name="correo_login" placeholder="Nombre" style="font-size: 1.3rem;">
+                            <input type="text" class="form-control" id="id_email"  name="correo_login" placeholder="Nombre" style="font-size: 1.3rem;"/>
                             <label for="floatingInput">correo</label>
                         </div>
                         <div class="form-floating mb-3 col-6 p-2">
-                            <input type="password" class="form-control"  id="id_pass" placeholder="contraseña" style="font-size: 1.3rem;"  name="password_login">
+                            <input type="password" class="form-control"  id="id_pass" placeholder="contraseña" style="font-size: 1.3rem;"  name="password_login"/>
                             <label for="floatingInput">contraseña</label>
                         </div>
                         <div class="d-flex justify-content-between">
