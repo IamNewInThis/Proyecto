@@ -4,6 +4,7 @@ from django.contrib.auth.models import User
 from core.models import Cuenta 
 from core.forms import cuentaForm
 
+
 #CREAR UN CONSTRUCTOR
 class persona:
     def __init__(self, nombre,edad) -> None:
@@ -41,10 +42,12 @@ def arbustos(request):
 
 def registro(request):
     if request.method=='POST':
-        usuario = User.objects.create_user(username='pepe',email='corneta@duoc.cl',password='elmaricon123')
-        cuenta = Cuenta.objects.create(rut='20146051-4',fechnac='2022-06-22',direcc='av siempre viva',user_id=usuario.id,numte=74341877)
-        print(usuario)
-        print(cuenta)
+        newusu = User.objects.create_user(username=request.POST['nombre'],email=request.POST['email'],password=request.POST['password'])
+        ##usuario = User.objects.create_user(username='pepe',email='corneta@duoc.cl',password='elmaricon123')
+        cuenta = Cuenta.objects.create(rut=request.POST['rut'],fechnac=request.POST['fechnac'],direcc=request.POST['direcc'],user_id=newusu.id,numte=request.POST['numte'])
+       ##cuenta = Cuenta.objects.create(rut='20146051-4',fechnac='2022-06-22',direcc='av siempre viva',user_id=usuario.id,numte=74341877)
+        print(request.POST['password'])
+        print(request.POST['numte'])
     return render(request,'core/Registro.html')
 
 
