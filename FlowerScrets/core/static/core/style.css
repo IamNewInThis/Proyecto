@@ -284,7 +284,7 @@ section{
     width: 40rem; /*ANCHURA DEL RECUARDRO*/
     z-index: 1100;
     background: var(--white);
-    height: 55vh;/*LARGO DEL RECUADRO*/
+    
 }
 
 .user-icon.active{

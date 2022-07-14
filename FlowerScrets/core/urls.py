@@ -16,5 +16,7 @@ urlpatterns = [
     path('tierra',tierra,name="tierra"),
     path('subscripcion',subscripcion,name="subscripcion"),
     path('arbustos',arbustos,name="arbustos"),
-    path('registro',registro,name="registro")
+    path('registro',registro,name="registro"),   # primer paramtro es el link, segundo la función que redirecciona, tercero el nombre
+    path('logeo',logeo,name='logeo')
+
 ]

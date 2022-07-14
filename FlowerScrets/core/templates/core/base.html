@@ -72,28 +72,13 @@
         <section>
             
             <div id="cerrar"><span><a class="fas fa fa-close"></a></span></div>
-            <h3 class="titulo">Iniciar Sesion</h3>
             <div class="row">      
-                </div class="col-md-6 offset-md-6">
+                </div class="col-md-12">
                     <div class="flex">     
-                        <form action="" class="mt-5 border p-5 bg-light shadow">
-                            <div class="mb-3 col-md-12">
-                                <label for="email">Email</label>
-                                <input type="email" class="form-control" name="email" id="email" maxlength="30" required>
-                            </div>
-        
-                            <div class="mb-3 col-md-12">
-                                <label for="nombre">contraseña</label>
-                                <input type="password" class="form-control" name="nombre" id="nombre" maxlength="20">
-                            </div>
-
-                            <div class="col-md-12">
-                                <input type="submit" value="Iniciar Sesion" class="btn btn-outline-success" style="background-color: #67cb57; border-radius: 5rem; padding:.9rem 3.5rem;">
-                            </div>
-                        
-                        </form>
-                        <p class="text-center mt-3"><a href="{% url 'registro' %}">Registrarse</a></p>
-
+                        <div class="col-12 mt-5 border p-5 bg-light shadow d-flex justify-content-center flex-column gap-3">
+                            <a class="btn btn-primary btn-lg" href="{% url 'logeo' %}">Iniciar sesion</a>
+                            <a class="btn btn-success btn-lg" href="{% url 'registro' %}">registrarse</a>
+                        </div>
                 </div>
 
             </div>
