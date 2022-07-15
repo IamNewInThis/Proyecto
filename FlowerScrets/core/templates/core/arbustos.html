@@ -1,0 +1,205 @@
+{% extends 'core/base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<!------------------------------SLIDER---------------------------------->
+    <section class="home-slider" id="home-slider">
+        <div class="contenido-slider">
+            <h3>Arbustos y Arboles</h3>
+            <p>Hermosos Arbustos para el jardin</p>
+            <a class="btn btn-outline-success" href="#producto" role="button" style="background-color: #67cb57; border-radius: 5rem; padding:.9rem 3.5rem;">Comprar Ahora</a>
+        </div>
+
+        <div class="controles">
+            <span class="vid-btn active" data-src="images/slider_arbusto.png"></span>
+            <span class="vid-btn" data-src="images/slider_ar4.jpg"></span>
+            <span class="vid-btn" data-src="images/slider_ar6.jpg"></span>
+        </div>
+
+        <div class="image-container">
+            <img src="{% static 'core/images/slider_arbusto.png' %}" id="imagen-slider" alt="">
+        </div>
+
+    </section>
+
+{% endblock %}
+
+{% block content_productos %}
+<!--BOTON DE COMPARTIR-->
+<div class="modal fade" id="shapeModal" aria-hidden="true" tabindex="-1" aria-labelledby="modalTitle">
+    <div class="modal-dialog modal-dialog-centered" style="max-width: 500px; height: 500px;">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="modal-title" style="font-size: 3rem;">Compartir</h3>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <div class="popup">
+                <div class="content">
+                    <ul class="icons">
+                        <a href="https://www.facebook.com/" target="_BLANK"><i class="fab fa-facebook"><p></p></i></a>
+                        <a href="https://www.twitter.com/" target="_BLANK"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.instagram.com/" target="_BLANK"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.whatsapp.com/" target="_BLANK"><i class="fab fa-whatsapp"></i></a>
+                    </ul>
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+</div>
+
+<!---------------------------------------------PRODUCTO 1------------------------------------------------->
+<section class="productos" id="producto">
+
+    <div class="box-container">
+
+        <div class="box">
+            <span class="descuento">-5%</span>
+            <div class="image">
+                <img src="https://media.easy.cl/is/image/EasySA/1317505-01?height=320&width=400&format=jpg&ver=1627511347346" style="width: 350px; height: 350px;" alt="">
+                <div class="iconos">
+                    <a class="fa fa-cart-plus"  data-bs-target="#miModal" data-bs-toggle="modal"></a>
+                    <a class="fas fa fa-share" data-bs-target="#shapeModal" data-bs-toggle="modal"></a>
+                </div>
+            </div>
+
+            <div class="contenido">
+                <h3>Naranjo</h3>
+                <div class="precio">$57.000 <span>60.000</span></div>
+            </div>
+        </div>
+<!------------------------------------MODAL------------------------------------------------------> 
+<div class="modal fade" id="miModal" aria-hidden="true" tabindex="-1" aria-labelledby="modalTitle">
+    <div class="modal-dialog modal-dialog-centered" style="max-width: 800px;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" id="modalTitle" style="color: #333; font-size: 2.5rem;">Naranjo</h3>
+                <h3 class="modal-dialog">$57.000 </h3>
+                                    <!--BOTON DE CIERRE-->
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" style="width: 3rem;"></button>
+            </div>
+            <div class="modal-body">
+                <div class="modal-fullscreen"><img src="https://media.easy.cl/is/image/EasySA/1317505-01?height=320&width=400&format=jpg&ver=1627511347346" style="width: 350px; height: 350px;"></div>
+
+                <div class="form-group">
+                    <label for="Cantidad">Cantidad</label>
+                    <select name="identificador" id="identificador" class="form-select" style="width:30%; height:35px; font-size: 1.3rem;">
+                        <option value="1" style="font-size: 1.3rem;">1</option>
+                        <option value="2" style="font-size: 1.3rem;">2</option>
+                        <option value="3" style="font-size: 1.3rem;">3</option>
+                        <option value="4" style="font-size: 1.3rem;">4</option>
+                    </select>
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary">Agregar Al Carro</button>
+            </div>
+        </div>
+    </div>
+</div>
+        
+<!---------------------------------------------PRODUCTO 2------------------------------------------------->
+        <div class="box">
+            <span class="descuento">-10%</span>
+            <div class="image">
+                <img src="https://falabella.scene7.com/is/image/Falabella/881425062_1?wid=800&hei=800&qlt=70" style="width: 350px; height: 350px;" alt="">
+                <div class="iconos">
+                    <a class="fa fa-cart-plus"  data-bs-target="#miModal2" data-bs-toggle="modal"></a>
+                    <a class="fas fa fa-share" data-bs-target="#shapeModal" data-bs-toggle="modal"></a>
+                </div>
+            </div>
+
+            <div class="contenido">
+                <h3>Ficus</h3>
+                <div class="precio">$58.500 <span>$65.000</span></div>
+            </div>
+        </div>
+<!-----------------------------------------------PRODUCTO MODAL 2----------------------------------------------------------->
+<div class="modal fade" id="miModal2" aria-hidden="true" tabindex="-1" aria-labelledby="modalTitle">
+    <div class="modal-dialog modal-dialog-centered" style="max-width: 800px;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" id="modalTitle" style="color: #333; font-size: 2.5rem;">Ficus</h3>
+                <h3 class="modal-dialog">$58.500</h3>
+                                    <!--BOTON DE CIERRE-->
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" style="width: 3rem;"></button>
+            </div>
+            <div class="modal-body">
+                <div class="modal-fullscreen"><img src="https://falabella.scene7.com/is/image/Falabella/881425062_1?wid=800&hei=800&qlt=70" style="height: 300px;"></div>
+
+                <div class="form-group">
+                    <label for="Cantidad">Cantidad</label>
+                    <select name="identificador" id="identificador" class="form-select" style="width:30%; height:35px; font-size: 1.3rem;">
+                        <option value="1" style="font-size: 1.3rem;">1</option>
+                        <option value="2" style="font-size: 1.3rem;">2</option>
+                        <option value="3" style="font-size: 1.3rem;">3</option>
+                        <option value="4" style="font-size: 1.3rem;">4</option>
+                    </select>
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary">Agregar Al Carro</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!---------------------------------------------PRODUCTO 3------------------------------------------------->
+        <div class="box">
+            <span class="descuento">-5%</span>
+            <div class="image">
+                <img src="https://www.paris.cl/dw/image/v2/BCHW_PRD/on/demandware.static/-/Sites-paris-marketplace/default/dwc679f8bf/images/imagenes-productos/800/MKC2/MKC2B4VVLB-001.jpg?sw=513&sh=654&sm=fit" style="width: 350px; height: 350px;" alt="">
+                <div class="iconos">
+                    <a class="fa fa-cart-plus"  data-bs-target="#miModal3" data-bs-toggle="modal"></a>
+                    <a class="fas fa fa-share" data-bs-target="#shapeModal" data-bs-toggle="modal"></a>
+                </div>
+            </div>
+
+            <div class="contenido">
+                <h3>Olivo</h3>
+                <div class="precio">$42.750 <span>$45.000</span></div>
+            </div>
+        </div>
+
+<!-----------------------------------------------PRODUCTO MODAL 3----------------------------------------------------------->
+<div class="modal fade" id="miModal3" aria-hidden="true" tabindex="-1" aria-labelledby="modalTitle">
+    <div class="modal-dialog modal-dialog-centered" style="max-width: 800px;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" id="modalTitle" style="color: #333; font-size: 2.5rem;">Olivo</h3>
+                <h3 class="modal-dialog">$42.750 </h3>
+                                    <!--BOTON DE CIERRE-->
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" style="width: 3rem;"></button>
+            </div>
+            <div class="modal-body">
+                <div class="modal-fullscreen"><img src="https://www.paris.cl/dw/image/v2/BCHW_PRD/on/demandware.static/-/Sites-paris-marketplace/default/dwc679f8bf/images/imagenes-productos/800/MKC2/MKC2B4VVLB-001.jpg?sw=513&sh=654&sm=fit" style="height: 300px;"></div>
+
+                <div class="form-group">
+                    <label for="Cantidad">Cantidad</label>
+                    <select name="identificador" id="identificador" class="form-select" style="width:30%; height:35px; font-size: 1.3rem;">
+                        <option value="1" style="font-size: 1.3rem;">1</option>
+                        <option value="2" style="font-size: 1.3rem;">2</option>
+                        <option value="3" style="font-size: 1.3rem;">3</option>
+                        <option value="4" style="font-size: 1.3rem;">4</option>
+                    </select>
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary">Agregar Al Carro</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+    </div>
+</section>
+
+
+
+{% endblock %}

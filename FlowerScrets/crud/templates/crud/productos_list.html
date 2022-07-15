@@ -1,0 +1,120 @@
+{% extends 'crud/base.html' %}
+
+{% load static  %}
+
+{% block content %}
+<div class="container mt-4 mb-2 text-center bg-danger text-white py-5 rounded">
+    <h1>Listado Productos FlowerSecrets</h1>
+</div>
+{% endblock %}
+
+{% block main_content %}
+<div class="container mt-4 mb-4">
+    <div class="row">
+
+    </div>
+</div>
+
+<div class="container mt-2 mb-2">
+    {% if 'OK' in request.GET %}
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        <strong>Producto ingresado satisfactoriamente.</strong>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    {% endif %}
+    {% if 'FAIL' in request.GET %}
+    <div class="alert alert-primary alert-dismissible fade show" role="alert">
+        <strong>Producto actualizado satisfactoriamente.</strong>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    {% endif %}
+    {% if 'SUCCESS' in request.GET %}
+    <div class="alert alert-primary alert-dismissible fade show" role="alert">
+        <strong>Producto actualizado satisfactoriamente.</strong>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    {% endif %}
+    {% if 'DELETED' in request.GET %}
+    <div class="alert alert-info alert-dismissible fade show" role="alert">
+        <strong>Producto eliminado satisfactoriamente.</strong>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    {% endif %}
+</div>
+
+
+<div class="container-fluid mt-2 mb-2">
+    <table  class="table table-hover">
+        <thead class="table-success">
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Categoria</th>
+                <th>Precio</th>
+                <th>Stock</th>
+                <th>Imagen</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            {% for p in productos %}
+                <tr>
+                    <td>{{p.idProducto}}</td>
+                    <td>{{p.nombre}}</td>
+                    <td>{{p.categoria}}</td>
+                    <td>{{p.precio}}</td>
+                    <td>{{p.stock}}</td>
+                    <td>
+                        <img class="img-table" src="{{p.imagen.url}}" alt="{{p.idProducto}}" style="height: 100px;">  
+                    </td>
+                    <td>
+                        <!--EDITAR-->
+                        <a class="btn btn-outline-warning" href="/crud/{{p.idProducto}}/edit">
+                            <i class="fa-solid fa-pen-to-square"></i>
+                        </a>
+                        <!--BORRAR-->
+                        <a class="btn btn-outline-danger modal-borrar" data-bs-toggle="modal"  data-bs-target="#staticBackdrop" data-href="{% url 'productos-delete' p.idProducto  %}" >
+                            <i class="fa-solid fa-trash-can"></i>
+                        </a>
+                        <!--AGREGAR-->
+                        <a class="btn btn-outline-success" href="{% url 'productos-new' %}"> 
+                            <i class="fa-solid fa-plus"></i>
+                        </a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="staticBackdropLabel">Mensajes</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <h6 class="modal-title">Estas seguro que deseas eliminar el producto seleccionado.<br>Esta acción no se puede deshacer.</h6>
+            </div>
+            <div class="modal-footer">
+                <a id="confirmar-borrar" class="btn btn-success" href="#">Si</a>
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+    $('.modal-borrar').on('click',function() {
+        const href = $(this).attr('data-href');
+        $('#confirmar-borrar').attr('href',href)
+            console.log("funcoina")
+    })
+</script>
+{% endblock %}

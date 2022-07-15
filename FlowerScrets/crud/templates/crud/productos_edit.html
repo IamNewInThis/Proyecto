@@ -1,0 +1,64 @@
+{% extends 'crud/base.html' %}
+
+{% load static %}
+
+{% block title %}Actualización Producto{% endblock %}
+
+{% block content %}
+<div class="container mt-4 mb-4 bg-dark text-white text-center py-5">
+    <h1>Actualización Producto:</h1>
+</div>
+{% endblock %}
+
+{% block main_content %}
+<div class="container mb-4">
+    <form action="" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="form-group mb-3">
+            <label for="idProducto" class="fw-bold">Código Producto</label>
+            <div class="input-group">
+                {{form.idProducto}}
+            </div>
+        </div>
+        <div class="form-group mb-3">
+            <label for="nombre" class="fw-bold">Nombre</label>
+            <div class="input-group">
+                {{form.nombre}}
+            </div>
+        </div>
+        <div class="form-group mb-3">
+            <label for="categoria" class="fw-bold">Categoria</label>
+            <div class="input-group">
+                {{form.categoria}}
+            </div>
+        </div>
+        <div class="form-group mb-3">
+            <label for="precio" class="fw-bold">Precio Producto</label>
+            <div class="input-group">
+                {{form.precio}}
+            </div>
+        </div>
+        <div class="form-group mb-3">
+            <label for="stock" class="fw-bold">Stock</label>
+            <div class="input-group">
+                {{form.stock}}
+            </div>
+        </div>
+        <div class="form-group mb-3">
+            <label for="imagen" class="fw-bold">Imagen</label>
+            <div class="input-group">
+                {{form.imagen}}
+            </div>
+            {% if form.instance.imagen %}
+                <div class="div">
+                    <img class="img-update" src="{{form.instance.imagen.url}}" alt="" style="width: 200px;"> 
+                </div>
+            {% endif %}
+        </div>
+        <div class="text-center mt-4">
+            <input type="submit" class="btn btn-outline-primary btn-block py-2" id="actualizar" value="Actualizar">
+            <input type="reset" class="btn btn-outline-success btn-block py-2" id="limpiar" value="Limpiar">
+        </div>
+    </form>
+</div>
+{% endblock %}

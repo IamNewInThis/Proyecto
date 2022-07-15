@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %} FlowerSecrets</title>
+
+    <!--ARCHIVO CSS-->
+    <link rel="stylesheet" href="static\core/style.css">
+    <link rel="stylesheet" href="static\core/share.css">
+    <!-- Inicio bloque CSS -->
+    {% block css %}{% endblock %}
+    <!-- FIN bloque CSS -->
+
+    <!--ICON REMIX -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+ 
+    <!--FONT AWESOME -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+ 
+    <!-- BOOTSTRAP -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    {% load static %}
+</head>
+<body>
+<!--------------------- NAVBAR -------------------------------------->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light colornvar">
+            <div class="container-fluid">
+              <a class="logo" href="#">Flower <span>Secrets</span></a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse justify-content-around" id="navbarNav">
+                <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link"  href="{%  url 'home'  %}">Inicio</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="{%  url 'flores'  %}">Flores</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="{%  url 'maceteros'  %}">Macetero</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="{%  url 'tierra'  %}">Tierra De Hoja</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="{%  url 'arbustos'  %}">Arbustos</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="{%  url 'subscripcion'  %}">Subscripción</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#" id="gen">Generar</a>
+                  </li>
+                  
+                </ul>
+                <div class="icono">
+                    <a href="#" class="fas fa fa-user" id="user-btn"></a>  
+                    <li class="nav-item dropdown " style="list-style: none;">
+                        <a class="nav-link dropdown-toggle"  href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="true" aria-haspopup="true">
+                            <i class="fas fa-shopping-cart imgCarrito"></i>
+                        </a>
+                        <ul class="dropdown-menu justify-content-center " style=" align-items: center;" aria-labelledby="navbarDropdown" id="carrito">
+                            <div class="alert alert-primary" role="alert" >
+                                <table class="table table-bordered" style="color: #e84393;">
+                                  <thead>
+                                    <tr>
+                                      <th scope="row" colspan="3" class="text-center">CARRITO</th>
+                                    </tr>
+                                    <tr>
+                                      <th scope="col">NOMBRE</th>
+                                      <th scope="col">PRECIO</th>
+                                      <th scope="col">CANTIDAD</th>
+                                      <th scope="col">ACCIONES</th>
+                                    </tr>
+                                  </thead>
+                                  <tbody>
+                                  {% if request.session.carrito.items %}
+                                    {% for key, value in request.session.carrito.items %}
+                                      <tr>
+                                        <td style="font-size: 1.3rem;">{{value.nombre}}</td>
+                                        <td style="font-size: 1.3rem;">${{value.acumulado}}</td>
+                                        <td style="font-size: 1.3rem;">{{value.cantidad}}
+                          
+                                        </td>
+                                        <td>
+                                          <a href="{% url 'Add' value.producto_id %}"><i class="fa-solid fa-plus"></i></a>
+                                          <a href="{% url 'Sub' value.producto_id %}"><i class="fa-solid fa-minus"></i></a>
+                                        </td>
+
+                                      </tr>
+                                    {% endfor %}
+                                  {% else %}
+                                    <tr>
+                                        <td colspan="4">
+                                            <div class="alert alert-danger text-center"> Sin Productos </div>
+                                        </td>
+                                    </tr>
+                                  {% endif %}
+                                    <tr>
+                                      <th scope="row">Total:</th>
+                                      <td colspan="2">$ {{total_carrito}}</td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                                <hr>
+                                </div>
+                                <div class="row text-center">
+                                    <div class="col-6"><a href="{% url 'CLS' %}" class="btn btn-danger">Limpiar</a></div>
+                                    <div class="col-6"><a href="{% url 'subscripcion' %}" class="btn btn-success">Pagar</a></div>
+                                </div> 
+                </div>
+              </div>
+            </div>
+          </nav>
+    </header>
+
+<!--------------------------ICONO DE USER-------------------------->
+<div class="user-icon">
+    <section>
+
+        <div id="cerrar"><span><a class="fas fa fa-close"></a></span></div>
+        <div class="row">
+            </div class="col-md-12">
+                <div class="flex">
+                    <div class="col-12 mt-5 border p-5 bg-light shadow d-flex justify-content-center flex-column gap-3">
+                        {% if not user.is_authenticated %}
+                        <h3>FlowerSecrets Autenticacion</h3>
+                        <a class="btn btn-primary btn-lg" href="{% url 'logeo' %}">Iniciar sesion</a>
+                        <a class="btn btn-success btn-lg" href="{% url 'registro' %}">registrarse</a>
+                        {% else %}
+                        <h3>Bienvenido {{ user.first_name }} {{ user.last_name }}</h3>
+                        <a class="btn btn-success btn-lg" href="{% url 'logout' %}">Cerrar sesion</a>
+                        {% endif %}
+                    </div>
+            </div>
+
+        </div>
+    </section>
+</div>
+<!---------------------GENERADOR-------------------------->
+<div class="gen-div">
+    <section>
+        <div class="btn-cerrar-popup" id="cerrar-popup"><button>X</button></div>
+        <!--<div id="cerrar"><span><a class="fas fa fa-close"></a></span></div>-->
+        <h3 class="titulo-gen">Generar</h3>
+        <P>Si te sientes indeciso presiona este boton que te recomendara una planta segun el clima</P>
+        <div class="row">      
+            </div class="col-md-6 offset-md-6">
+                <div class="tiempo">
+                    <div class="recomendar-container">
+                        <button id="solicitarclima">Recomendar</button>
+                    </div>
+                    <table class="table" id="tabla">
+                        <thead>
+        
+                        <tr>
+                            <th scope="col">Pais</th>
+                            <th scope="col">Comuna</th>
+                            <th scope="col">temperatura mínima</th>
+                            <th scope="col">temperatura máxima</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                        </table>
+                </div>
+  
+        </div>
+    </section>
+  </div>
+  <!-- Inicio Bloque SLIDER -->
+  {% block content %}{% endblock %}
+  <!-- Fin Bloque SLIDER -->
+
+
+        <!-------------------SECCION DE ICONOS---------------------------->    
+        <section class="icono-container">
+        
+            <div class="iconos">
+                <img src="{% static 'core/images/icon-1.png' %}" alt="">
+                <div class="info">
+                    <h3>Delivery gratis</h3>
+                    <span>En compras superiores a $30.000</span>
+                </div>
+            </div>
+    
+            <div class="iconos">
+                <img src="{% static 'core/images/icon-3.png' %}" alt="">
+                <div class="info">
+                    <h3>Puntos De canjeo</h3>
+                    <span>+15 por compras</span>
+                    <span></span>
+                </div>
+            </div>
+    
+            <div class="iconos">
+                <img src="{% static 'core/images/icon-4.png' %}" alt="">
+                <div class="info">
+                    <h3>Subscripción</h3>
+                    <span>5% de descuento en todos los productos</span>
+                    <span></span>
+                </div>
+            </div>
+        </section>
+
+  <!-- Inicio Bloque PRODUCTOS-->
+  {% block content_productos %}{% endblock %}
+  <!-- Fin Bloque PRODUCTOS -->
+
+<!------------------------------------CONTACTO------------------------------------------------------>
+<section class="contacto">
+    <h1 class="encabezado"> <span> contacta</span>nos</h1>
+
+    <div class="row">
+        <form action="">
+            <input type="text" placeholder="nombre" class="box">
+            <input type="text" placeholder="email" class="box">
+            <input type="text" placeholder="numero" class="box">
+            <textarea name="" class="box" placeholder="mensaje" id="" cols="30" rows="10"></textarea>
+            <input type="submit" value="enviar mensaje" class="btn">
+        </form>
+        <div class="image">
+            <img src="{% static 'core/images/contact-img.svg' %}" alt="">
+        </div>
+    </div>
+</section>
+
+<!------------------------------------FOOTER------------------------------------------------------>
+   <section class="footer">
+    <div class="box-container">
+
+        <div class="box">
+            <h3>Sobre Nosotros</h3>
+            <p>
+                Somos una empresa dedicada a proveer los mejores
+                productos para la decoraciones o cuidado de tus plantas. 
+
+            </p>
+        </div>
+
+        <div class="box">
+            <h3>links extras</h3>
+            <a href="#">Mi Cuenta</a>
+            <a href="#">Mis ordenes</a>
+            <a href="#">Mis favoritos</a>
+        </div>
+
+        <div class="box">
+            <h3>links rapidos</h3>
+            <a href="{%  url 'home'  %}">Inicio</a>
+            <a href="{%  url 'flores'  %}">Flores</a>
+            <a href="{%  url 'maceteros'  %}">Maceteros</a>
+            <a href="{%  url 'tierra'  %}">tierra de hojas</a>
+            <a href="arbustos.html">Arbustos</a>
+            <a href="#">Subscripción</a>
+        </div>
+
+
+        <div class="box">
+            <h3>Información de contacto</h3>
+            <a href="#">+56971684528</a>
+            <a href="#">flowerscret@gmail.com</a>
+            <img src="{% static 'core/images/payment.png' %}" alt="">
+            <a href="https://www.instagram.com/" class="social" target="_BLANK"><i class="ri-instagram-line"></i></a>
+            <a href="https://www.twitter.com/" class="social" target="_BLANK"><i class="ri-twitter-line"></i></a>
+            <a href="https://www.facebook.com/" class="social" target="_BLANK"><i class="ri-facebook-fill"></i></a>
+        </div>
+
+    </div>
+
+    <div class="derechos">
+        ©Todos los derechos reservado a <span>Flower Secrets.</span>
+    </div>
+</Section>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="static\core/script.js"></script>
+    <script src="static\core/alerta.js"></script>
+    <script src="static\core/apiclima.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10%22%3E"></script>
+
+    {% if messages %}
+        {% for m in messages%}
+            <script>
+                Swal.fire({
+                "title": "Error de Autenticacion",
+                "text": "{{m}}",
+                "icon": "error"
+                })
+            </script>
+        {% endfor %}
+    {% endif %}
+    <!-- Inicio bloque JS -->
+    {% block js %}{% endblock %}
+    <!-- FIN bloque JS -->
+</body>
+</html>
