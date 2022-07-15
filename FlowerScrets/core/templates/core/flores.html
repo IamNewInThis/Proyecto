@@ -62,8 +62,7 @@
                 <div class="image">
                     <img src="{{p.imagen.url}}" alt=""  style="width: 300px; height: 300px;">
                     <div class="iconos">
-                        <a href="#" class="fas fa-heart"></a>
-                        <a class="fa fa-cart-plus"  data-bs-target="#miModal" data-bs-toggle="modal"></a>
+                        <a class="fa fa-cart-plus"  data-bs-target="#miModal{{p.idProducto}}" data-bs-toggle="modal"></a>
                         <a class="fas fa fa-share" data-bs-target="#shapeModal" data-bs-toggle="modal"></a>
                     </div>
                 </div>
@@ -79,8 +78,8 @@
 
 
 <!------------------------------------MODAL------------------------------------------------------> 
-<div class="modal fade" id="miModal" aria-hidden="true" tabindex="-1" aria-labelledby="modalTitle">
-    {%for p in flores %}
+{%for p in flores %}
+<div class="modal fade" id="miModal{{p.idProducto}}" aria-hidden="true" tabindex="-1" aria-labelledby="modalTitle">
     <div class="modal-dialog modal-dialog-centered" style="max-width: 800px;">
         <div class="modal-content">
             <div class="modal-header">
@@ -104,11 +103,11 @@
 
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-primary">Agregar Al Carro</button>
+                <a href="{% url 'Add' p.idProducto %}" class="btn btn-primary">Agregar Al Carro</a>
             </div>
         </div>
     </div>
-    {% endfor %}
 </div>
+    {% endfor %}
 {% endblock %}
 

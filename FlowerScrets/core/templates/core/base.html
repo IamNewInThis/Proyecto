@@ -58,33 +58,60 @@
                   
                 </ul>
                 <div class="icono">
-                    <a href="#" class="fas fa fa-heart" id="heart-btn"></a>
                     <a href="#" class="fas fa fa-user" id="user-btn"></a>  
                     <li class="nav-item dropdown " style="list-style: none;">
                         <a class="nav-link dropdown-toggle"  href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="true" aria-haspopup="true">
                             <i class="fas fa-shopping-cart imgCarrito"></i>
                         </a>
-                        <ul class="dropdown-menu justify-content-center "  aria-labelledby="navbarDropdown" id="carrito">
-                            <li>
-                                <table class="table text-center px-30"  id="lista-carrito">
-                                    <thead>
-                                        <tr>
-                                            <th scope="col">Nombre</th>
-                                            <th scope="col">Precio</th>
-                                            <th scope="col">Cantidad</th>
-                                            <th scope="col">Eliminar</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <!--Aca se agregan los items desde Js-->
-                                    </tbody>
+                        <ul class="dropdown-menu justify-content-center " style=" align-items: center;" aria-labelledby="navbarDropdown" id="carrito">
+                            <div class="alert alert-primary" role="alert" >
+                                <table class="table table-bordered" style="color: #e84393;">
+                                  <thead>
+                                    <tr>
+                                      <th scope="row" colspan="3" class="text-center">CARRITO</th>
+                                    </tr>
+                                    <tr>
+                                      <th scope="col">NOMBRE</th>
+                                      <th scope="col">PRECIO</th>
+                                      <th scope="col">CANTIDAD</th>
+                                      <th scope="col">ACCIONES</th>
+                                    </tr>
+                                  </thead>
+                                  <tbody>
+                                  {% if request.session.carrito.items %}
+                                    {% for key, value in request.session.carrito.items %}
+                                      <tr>
+                                        <td style="font-size: 1.3rem;">{{value.nombre}}</td>
+                                        <td style="font-size: 1.3rem;">${{value.acumulado}}</td>
+                                        <td style="font-size: 1.3rem;">{{value.cantidad}}
+                          
+                                        </td>
+                                        <td>
+                                          <a href="{% url 'Add' value.producto_id %}"><i class="fa-solid fa-plus"></i></a>
+                                          <a href="{% url 'Sub' value.producto_id %}"><i class="fa-solid fa-minus"></i></a>
+                                        </td>
+
+                                      </tr>
+                                    {% endfor %}
+                                  {% else %}
+                                    <tr>
+                                        <td colspan="4">
+                                            <div class="alert alert-danger text-center"> Sin Productos </div>
+                                        </td>
+                                    </tr>
+                                  {% endif %}
+                                    <tr>
+                                      <th scope="row">Total:</th>
+                                      <td colspan="2">$ {{total_carrito}}</td>
+                                    </tr>
+                                  </tbody>
                                 </table>
-                            </li>
-                            
-                            <li><hr class="dropdown-divider"></li>
-                            <button type="button" id="vaciar-carrito" class="btn btn-danger">Vaciar Carrito</button>
-                            <button type="button" id="pagar" class="btn btn-outline-success">Procesar Compra</button>                        </ul>
-                        </li> 
+                                <hr>
+                                </div>
+                                <div class="row text-center">
+                                    <div class="col-6"><a href="{% url 'CLS' %}" class="btn btn-danger">Limpiar</a></div>
+                                    <div class="col-6"><a href="{% url 'subscripcion' %}" class="btn btn-success">Pagar</a></div>
+                                </div> 
                 </div>
               </div>
             </div>
@@ -254,9 +281,12 @@
 </Section>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="static\core/script.js"></script>
+    <script src="static\core/alerta.js"></script>
     <script src="static\core/apiclima.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10%22%3E"></script>
 
     {% if messages %}
         {% for m in messages%}

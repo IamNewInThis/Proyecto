@@ -243,7 +243,7 @@ section{
 .productos .box-container .box .image .iconos .fa-cart-plus{
     border-left: .1rem solid #fff7;/*SEPARACION DE ICONO*/
     border-right: .1rem solid #fff7;/*SEPARACION DE ICONO*/
-    width: 100%;
+    width: 55%;
 }
 
 .productos .box-container .box .image .iconos a:hover{
@@ -708,7 +708,7 @@ section{
 }
 .sanfran{
     font-family: 'Lobster', cursive;
-    color: #ffff00;
+    color: #dfdfde;
     font-size: 20px;
 }
 .sanfran:hover{
@@ -730,8 +730,6 @@ section{
     padding: 0;
     
 }
-
-
 .rojo{
     color:#1b54077a;
     font-size: 17px;
@@ -740,11 +738,7 @@ section{
     color: rgba(255, 0, 0, 0.692);
     text-shadow: grey 2px 2px 3px;
 }
-#pagar :hover {
-    color: rgb(4, 94, 228);
-    font-weight: 300;
-    background-color: #09a0e63b;
-}
+
 #menosProducto{
     color: rgb(121, 118, 118);
 }

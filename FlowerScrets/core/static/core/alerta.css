@@ -1,0 +1,34 @@
+body{
+    overflow: hidden;
+}
+.alert{
+    background: #ffdb9b;
+    padding: 40px 60px;
+    min-width: 500px;
+    position: absolute;
+    right: 0px;
+    top: -20px; /*ALTURA DE ALERTA*/
+    border-radius: 40px;
+    border-left: 30px solid #ffa502;
+}
+.alert .fa-exclamation-circle{
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.alert .hide{
+    display: none;
+}
+
+.alert .msg{
+    padding: 0 20px;
+    font-size: 18px;
+    color: #ce8500;
+}
+
+.alert .close-btn{
+    background: #ffd080;
+    padding: 20px;
+}

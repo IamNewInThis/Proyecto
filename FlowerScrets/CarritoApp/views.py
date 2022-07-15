@@ -2,7 +2,7 @@ from django.shortcuts import render, HttpResponse, redirect
 
 # Create your views here.
 from CarritoApp.Carrito import Carrito
-from crud.models import Producto
+from CarritoApp.models import Producto
 
 
 def tienda(request):

@@ -3,6 +3,7 @@
 {% load static %}
 
 {% block content %}
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <!------------------------------------SUBSCRIPCION  ------------------------------------------------------>
 <section class="formulario">
     <div class="row">
@@ -52,12 +53,13 @@
   
                   <div class="d-flex justify-content-between">
                     <span class="fs-3">Precio suscripción $5.200 por mes</span>
-                    <button class="btn btn-danger btn-lg" id="btn">Suscribirse</button>
                   </div>
   
               </div>
           </form>    
+          <button class="btn btn-danger btn-lg"  onclick="comprobar()">Suscribirse</button>
         </div>
     </div> 
   </section>
+
 {% endblock %}
