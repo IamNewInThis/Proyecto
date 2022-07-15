@@ -95,8 +95,6 @@ header .fa-bars{
 }
 
 
-
-
 /*SECCION INICIO*/
 section{
     padding: 2rem 9%;
@@ -135,8 +133,6 @@ section{
     padding: 1rem 0;
     line-height: 1.5;
 }
-
-
 
 
 /*SECCION DE ICONO (COMPRAS CON SUB-CANJEO DE PUNTOS)*/
@@ -288,7 +284,6 @@ section{
     width: 40rem; /*ANCHURA DEL RECUARDRO*/
     z-index: 1100;
     background: var(--white);
-    height: 55vh;/*LARGO DEL RECUADRO*/
 }
 
 .user-icon.active{
@@ -705,8 +700,6 @@ section{
     background: #ffc0cb !important;
     width:100%;
 }
-
-
 /*---------------------------------------------------------------------------------*/
 /*------------------------------       Menu Bar     -------------------------------*/
 /*---------------------------------------------------------------------------------*/
@@ -715,7 +708,7 @@ section{
 }
 .sanfran{
     font-family: 'Lobster', cursive;
-    color: #ffff00;
+    color: #dfdfde;
     font-size: 20px;
 }
 .sanfran:hover{
@@ -726,7 +719,6 @@ section{
 .customNavbar{
     color: #3bb411 !important;
 }
-
 
 /*---------------------------------------------------------------------------------*/
 /*------------------------------      Carrito       -------------------------------*/
@@ -767,4 +759,3 @@ section{
     color: rgb(9, 165, 9);
     cursor: pointer;
 }
-

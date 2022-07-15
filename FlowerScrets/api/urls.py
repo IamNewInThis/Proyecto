@@ -1,4 +1,9 @@
 from django.urls import path
+from .views import *
 
-def product_list (request):
-    pass
+urlpatterns =[
+    path('productos/',productos_list),
+    path('categorias/',categoria_list),
+    path('cuentas/',cuenta_list),
+    path('productos/<str:product_id>',productos_detail),
+]

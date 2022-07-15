@@ -29,19 +29,42 @@
 
 
 {% block content_productos %}
+<!--BOTON DE COMPARTIR-->
+<div class="modal fade" id="shapeModal" aria-hidden="true" tabindex="-1" aria-labelledby="modalTitle">
+    <div class="modal-dialog modal-dialog-centered" style="max-width: 500px; height: 500px;">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="modal-title" style="font-size: 3rem;">Compartir</h3>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <div class="popup">
+                <div class="content">
+                    <ul class="icons">
+                        <a href="https://www.facebook.com/" target="_BLANK"><i class="fab fa-facebook"><p></p></i></a>
+                        <a href="https://www.twitter.com/" target="_BLANK"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.instagram.com/" target="_BLANK"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.whatsapp.com/" target="_BLANK"><i class="fab fa-whatsapp"></i></a>
+                    </ul>
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+</div>
 <!---------------------------------------------PRODUCTOS------------------------------------------------->
 <section class="productos" id="producto">
 
     <div class="box-container">
+        {%for p in flores %}
             <div class="box">
                 <span class="descuento">-5%</span>
-                {%for p in flores %}
                 <div class="image">
-                    <img src="{{p.imagen.url}}" alt="">
+                    <img src="{{p.imagen.url}}" alt=""  style="width: 300px; height: 300px;">
                     <div class="iconos">
                         <a href="#" class="fas fa-heart"></a>
-                        <a class="fa fa-cart-plus"  data-bs-target="#miModal2" data-bs-toggle="modal"></a>
-                        <a href="#" class="fas fa fa-share"></a>
+                        <a class="fa fa-cart-plus"  data-bs-target="#miModal{{p.idProducto}}" data-bs-toggle="modal"></a>
+                        <a class="fas fa fa-share" data-bs-target="#shapeModal" data-bs-toggle="modal"></a>
                     </div>
                 </div>
 
@@ -49,24 +72,25 @@
                     <h3>{{p.nombre}}</h3>
                     <div class="precio">${{p.precio}} <span>$21.000</span></div>
                 </div>
-                {% endfor %}
             </div>
+        {% endfor %}
     </div>
 </section>
 
 
 <!------------------------------------MODAL------------------------------------------------------> 
-<div class="modal fade" id="miModal" aria-hidden="true" tabindex="-1" aria-labelledby="modalTitle">
+{%for p in flores %}
+<div class="modal fade" id="miModal{{p.idProducto}}" aria-hidden="true" tabindex="-1" aria-labelledby="modalTitle">
     <div class="modal-dialog modal-dialog-centered" style="max-width: 800px;">
         <div class="modal-content">
             <div class="modal-header">
-                <h3 class="modal-title" id="modalTitle" style="color: #333; font-size: 2.5rem;">Tulipanes Rosados</h3>
-                <h3 class="modal-dialog">$15.200</h3>
+                <h3 class="modal-title" id="modalTitle" style="color: #333; font-size: 2.5rem;">{{p.nombre}}</h3>
+                <h3 class="modal-dialog">${{p.precio}}</h3>
                                     <!--BOTON DE CIERRE-->
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" style="width: 3rem;"></button>
             </div>
             <div class="modal-body">
-                <div class="modal-fullscreen"><img src="{%static 'core/images/img-1.jpg' %}" style="height: 300px;"></div>
+                <div class="modal-fullscreen"><img src="{{p.imagen.url}}" style="height: 300px;"></div>
 
                 <div class="form-group">
                     <label for="Cantidad">Cantidad</label>
@@ -80,162 +104,11 @@
 
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-primary">Agregar Al Carro</button>
+                <a href="{% url 'Add' p.idProducto %}" class="btn btn-primary">Agregar Al Carro</a>
             </div>
         </div>
     </div>
 </div>
-<!-----------------------------------------------PRODUCTO MODAL 2----------------------------------------------------------->
-<div class="modal fade" id="miModal2" aria-hidden="true" tabindex="-1" aria-labelledby="modalTitle">
-    <div class="modal-dialog modal-dialog-centered" style="max-width: 800px;">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h3 class="modal-title" id="modalTitle" style="color: #333; font-size: 2.5rem;">Surtido de Rosas</h3>
-                <h3 class="modal-dialog">$19.950</h3>
-                                    <!--BOTON DE CIERRE-->
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" style="width: 3rem;"></button>
-            </div>
-            <div class="modal-body">
-                <div class="modal-fullscreen"><img src="{% static 'core/images/rosa_4.png' %}" style="height: 300px;"></div>
-
-                <div class="form-group">
-                    <label for="Cantidad">Cantidad</label>
-                    <select name="identificador" id="identificador" class="form-select" style="width:30%; height:35px; font-size: 1.3rem;">
-                        <option value="1" style="font-size: 1.3rem;">1</option>
-                        <option value="2" style="font-size: 1.3rem;">2</option>
-                        <option value="3" style="font-size: 1.3rem;">3</option>
-                        <option value="4" style="font-size: 1.3rem;">4</option>
-                    </select>
-                </div>
-
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-primary">Agregar Al Carro</button>
-            </div>
-        </div>
-    </div>
-</div>
-<!-----------------------------------------------PRODUCTO MODAL 3----------------------------------------------------------->
-<div class="modal fade" id="miModal3" aria-hidden="true" tabindex="-1" aria-labelledby="modalTitle">
-    <div class="modal-dialog modal-dialog-centered" style="max-width: 800px;">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h3 class="modal-title" id="modalTitle" style="color: #333; font-size: 2.5rem;">Tulipanes Blancos</h3>
-                <h3 class="modal-dialog">$14.250</h3>
-                                    <!--BOTON DE CIERRE-->
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" style="width: 3rem;"></button>
-            </div>
-            <div class="modal-body">
-                <div class="modal-fullscreen"><img src="{% static 'core/images/img-5.jpg' %}" style="height: 300px;"></div>
-
-                <div class="form-group">
-                    <label for="Cantidad">Cantidad</label>
-                    <select name="identificador" id="identificador" class="form-select" style="width:30%; height:35px; font-size: 1.3rem;">
-                        <option value="1" style="font-size: 1.3rem;">1</option>
-                        <option value="2" style="font-size: 1.3rem;">2</option>
-                        <option value="3" style="font-size: 1.3rem;">3</option>
-                        <option value="4" style="font-size: 1.3rem;">4</option>
-                    </select>
-                </div>
-
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-primary">Agregar Al Carro</button>
-            </div>
-        </div>
-    </div>
-</div>
-<!-----------------------------------------------PRODUCTO MODAL 4----------------------------------------------------------->
-<div class="modal fade" id="miModal4" aria-hidden="true" tabindex="-1" aria-labelledby="modalTitle">
-    <div class="modal-dialog modal-dialog-centered" style="max-width: 800px;">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h3 class="modal-title" id="modalTitle" style="color: #333; font-size: 2.5rem;">Calas Amarillas</h3>
-                <h3 class="modal-dialog">$14.250</h3>
-                                    <!--BOTON DE CIERRE-->
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" style="width: 3rem;"></button>
-            </div>
-            <div class="modal-body">
-                <div class="modal-fullscreen"><img src="{% static 'core/images/cala-amarillo.png' %}" style="height: 300px;"></div>
-
-                <div class="form-group">
-                    <label for="Cantidad">Cantidad</label>
-                    <select name="identificador" id="identificador" class="form-select" style="width:30%; height:35px; font-size: 1.3rem;">
-                        <option value="1" style="font-size: 1.3rem;">1</option>
-                        <option value="2" style="font-size: 1.3rem;">2</option>
-                        <option value="3" style="font-size: 1.3rem;">3</option>
-                        <option value="4" style="font-size: 1.3rem;">4</option>
-                    </select>
-                </div>
-
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-primary">Agregar Al Carro</button>
-            </div>
-        </div>
-    </div>
-</div>
-<!-----------------------------------------------PRODUCTO MODAL 5----------------------------------------------------------->
-<div class="modal fade" id="miModal5" aria-hidden="true" tabindex="-1" aria-labelledby="modalTitle">
-    <div class="modal-dialog modal-dialog-centered" style="max-width: 800px;">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h3 class="modal-title" id="modalTitle" style="color: #333; font-size: 2.5rem;">Gladiolo Blanco</h3>
-                <h3 class="modal-dialog">$16.150</h3>
-                                    <!--BOTON DE CIERRE-->
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" style="width: 3rem;"></button>
-            </div>
-            <div class="modal-body">
-                <div class="modal-fullscreen"><img src="{% static 'core/images/gladiolo.png' %}" style="height: 300px;"></div>
-
-                <div class="form-group">
-                    <label for="Cantidad">Cantidad</label>
-                    <select name="identificador" id="identificador" class="form-select" style="width:30%; height:35px; font-size: 1.3rem;">
-                        <option value="1" style="font-size: 1.3rem;">1</option>
-                        <option value="2" style="font-size: 1.3rem;">2</option>
-                        <option value="3" style="font-size: 1.3rem;">3</option>
-                        <option value="4" style="font-size: 1.3rem;">4</option>
-                    </select>
-                </div>
-
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-primary">Agregar Al Carro</button>
-            </div>
-        </div>
-    </div>
-</div>
-<!-----------------------------------------------PRODUCTO MODAL 6----------------------------------------------------------->
-<div class="modal fade" id="miModal6" aria-hidden="true" tabindex="-1" aria-labelledby="modalTitle">
-<div class="modal-dialog modal-dialog-centered" style="max-width: 800px;">
-    <div class="modal-content">
-        <div class="modal-header">
-            <h3 class="modal-title" id="modalTitle" style="color: #333; font-size: 2.5rem;">Surtido de Claveles</h3>
-            <h3 class="modal-dialog">$34.200</h3>
-                                <!--BOTON DE CIERRE-->
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" style="width: 3rem;"></button>
-        </div>
-        <div class="modal-body">
-            <div class="modal-fullscreen"><img src="{% static 'core/images/claveles.png' %}" style="height: 300px;"></div>
-
-            <div class="form-group">
-                <label for="Cantidad">Cantidad</label>
-                <select name="identificador" id="identificador" class="form-select" style="width:30%; height:35px; font-size: 1.3rem;">
-                    <option value="1" style="font-size: 1.3rem;">1</option>
-                    <option value="2" style="font-size: 1.3rem;">2</option>
-                    <option value="3" style="font-size: 1.3rem;">3</option>
-                    <option value="4" style="font-size: 1.3rem;">4</option>
-                </select>
-            </div>
-
-        </div>
-        <div class="modal-footer">
-            <button type="button" class="btn btn-primary">Agregar Al Carro</button>
-        </div>
-    </div>
-</div>
-</div>
-
-
+    {% endfor %}
 {% endblock %}
 

@@ -3,6 +3,7 @@ from django.urls import path
 from crud.views import product_by_categoria
 from .views import *
 
+
 urlpatterns = [
     path('',root),
     path('home', home,name="home"),
@@ -18,4 +19,11 @@ urlpatterns = [
     path('arbustos',arbustos,name="arbustos"),
     path('registro',registro,name="registro"),
 
+    path('logeo',logeo,name="logeo"),
+    path('logout',logout,name="logout"),
+
+    path('agregar/<str:idProducto>/', agregar_producto, name="Add"),
+    path('eliminar/<str:idProducto>/', eliminar_producto, name="Del"),
+    path('restar/<str:idProducto>/', restar_producto, name="Sub"),
+    path('limpiar/', limpiar_carrito, name="CLS"),
 ]

@@ -63,6 +63,6 @@ def productos_delete(request,product_id):
     except:
         return redirect(reverse('product-list') + "?FAIL")
 
-def product_by_categoria(request,flores):
-    productos = Producto.objects.filter(flores=flores)
-    return render(request,'crud/product_list.html',{'productos':productos})
+def product_by_categoria(request,categoria):
+    productos = Producto.objects.filter(categoria=categoria)
+    return render(request,'crud/productos_list.html',{'productos':productos})

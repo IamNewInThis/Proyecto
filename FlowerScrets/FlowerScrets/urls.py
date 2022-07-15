@@ -18,17 +18,13 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 
-from core import views
-from CarritoApp import *
+from core.views import *
 
 urlpatterns = [
     path('',include('core.urls')),
     path('crud/',include('crud.urls')),
     path('admin/', admin.site.urls),
-    path('agregar/<int:producto_id>/', agregar_producto, name="Add"),
-    path('eliminar/<int:producto_id>/', eliminar_producto, name="Del"),
-    path('restar/<int:producto_id>/', restar_producto, name="Sub"),
-    path('limpiar/', limpiar_carrito, name="CLS"),
+    path('api/',include('api.urls')),
 ]
 
 if settings.DEBUG:
